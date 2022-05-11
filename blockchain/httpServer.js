@@ -1,12 +1,18 @@
 import express from 'express'; 
 import bodyParser from 'body-parser';
+import cors from 'cors';
 import { getBlocks, createBlock } from './block.js';
 import { connectionToPeer, getPeers, mineBlock } from './p2pServer.js';
 
 // 초기화 함수
 const initHttpServer = (myHttpPoryt) => {
     const app = express();    
+    app.use(express.urlencoded({extended:true}))
     app.use(bodyParser.json());
+    app.use(cors({
+        origin:true,
+        credentials:true
+    }))
 
     app.get('/', (req, res) => {        
         res.send('Hello, World!');
