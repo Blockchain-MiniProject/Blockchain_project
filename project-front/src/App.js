@@ -4,7 +4,8 @@ import AddButton from './components/AddButton';
 function App() {
   return (
     <div>
-      <AddButton />
+      {/* <MiningButton/> */}
+      <PostExample/>
     </div>
   );
 }
