@@ -10,7 +10,7 @@ const PostExample = () => {
   }
 
   const handleClick = () => {
-    axios.post('http://localhost:3001/addpeer', {peer})
+    axios.post('http://localhost:3500/addPeer', {peer})
   }
   
   return (

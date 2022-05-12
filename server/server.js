@@ -1,20 +1,13 @@
-const express = require('express');
+import express from "express";
 const app = express();
-const cors = require('cors')
-const bodyParser = require('body-parser')
+import router from "./routes/index.js"
+import cors from "cors"
 
 app.use(cors())
-app.use(bodyParser.json());;
 
-app.get('/', (req, res) => {
-  res.send('back data 보내기 성공')
-})
+app.use(express.json());
+app.use(express.urlencoded({extended:true}))
 
-app.post('/addpeer', (req, res) => {
-  req.body;
-  console.log(req.body);
-})
+app.use(router)
 
-app.listen(3500, () => {
-    console.log('서버 시작')
-})
+app.listen(3500,console.log("server listening to http://localhost:3500"))
