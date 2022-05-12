@@ -4,6 +4,7 @@ import { Container, Table } from 'react-bootstrap';
 import { useParams } from 'react-router-dom'
 
 const BlockDetail = () => {
+<<<<<<< HEAD
   // const blockDetailList = ['Index', 'Data', 'TimeStamp', 'Hash', 'PreviousHash', 'Difficulty', 'Nonce']
   let {index} = useParams();
   console.log("index: ", index);
@@ -26,6 +27,15 @@ const BlockDetail = () => {
     getBlockDetail()
   }, [index])
   
+=======
+
+    try {
+
+    } catch (e) {
+        
+    }
+
+>>>>>>> 37bcadf (asdf)
   return (
     <>
     {block?

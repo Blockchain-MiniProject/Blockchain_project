@@ -13,10 +13,7 @@ const BlockPage = () => {
                 <Col>2 of 3</Col>
                 <Col>3 of 3</Col>
             </Row>
-
         </Container>
-        <BlockDetail />
-
     </div>
   )
 }
