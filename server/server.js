@@ -15,6 +15,6 @@ app.post('/addpeer', (req, res) => {
   console.log(req.body);
 })
 
-app.listen(3001, () => {
-  console.log('3001 port running')
+app.listen(3500, () => {
+    console.log('서버 시작')
 })
