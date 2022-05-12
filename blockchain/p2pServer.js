@@ -126,6 +126,7 @@ const mineBlock = (blockdata) => {
     {
         broadcasting(responseLatestMessage());
     }
+    return "채굴됐어용"
 }
 
 export { initP2PServer, connectionToPeer, getPeers, broadcasting, mineBlock}
