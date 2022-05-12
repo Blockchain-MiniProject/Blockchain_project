@@ -1,5 +1,5 @@
 import './App.css';
-import AddButton from './components/AddButton';
+import PostExample from './components/PostExample';
 
 function App() {
   return (
