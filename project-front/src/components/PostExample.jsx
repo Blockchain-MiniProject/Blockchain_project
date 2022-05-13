@@ -21,4 +21,4 @@ const PostExample = () => {
   )
 }
 
-export default PostExample
+export default PostExample;
