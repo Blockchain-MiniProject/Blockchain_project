@@ -24,12 +24,24 @@ const initP2PServer = (p2pPort) => {
 }
 
 const initConnection = (ws) => {
-    sockets.push(ws);
+    if(!sockets.some((socket) => {console.log("socket url",socket._url); socket._url == ws._url})) {
+        console.log("연결 : " + ws._url)
+        //console.log("연결 : " + socket.peername._url)
+        sockets.push(ws);
+    } else {
+        console.log("이미 연결된 아이피")
+    } // 중복된 ip 걸러내고, 서버가 켜질때 addpeer 가 작동
     initMessageHandler(ws);
     write(ws, queryAllMessage());    
 }
 
-const connectionToPeer = (newPeer) => { 
+// const initConnection = (ws) => {
+//     sockets.push(ws);   
+//     initMessageHandler(ws);
+//     write(ws, queryAllMessage());    
+// }
+
+const connectionToPeer = (newPeer) => {     
     console.log(newPeer)
     const ws = new WebSocket(newPeer) 
     ws.on('open', () => { initConnection(ws); console.log('Connect peer : ', newPeer ); })
