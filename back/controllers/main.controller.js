@@ -1,4 +1,5 @@
 import axios from "axios";
+import pool from "../db.js"
 
 export const addPeer = async (req,res) => {
     console.log(req.body.peer);
@@ -20,4 +21,16 @@ export const getBlock = async (req,res) => {
 export const mineBlock = async (req,res) => {
     const result = await axios.post("http://localhost:3010/mineBlock",{data:"sieun"})
     res.send(result.data)
+}
+
+export const dbBlocks = async (req,res)=> {
+    try {
+        const sql = `SELECT * FROM blocks`
+        const [result] = await pool.query(sql); 
+
+        res.send("dbBlock이야")
+    }
+    catch (e) {
+        throw e;
+    }
 }
