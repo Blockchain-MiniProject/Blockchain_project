@@ -1,7 +1,6 @@
 import './App.css';
-import PostExample from './components/PostExample';
-import MiningButton from './components/MiningButton';
-import 'bootstrap/dist/css/bootstrap.min.css';          //bootstrap 가져온것
+import 'bootstrap/dist/css/bootstrap.min.css';          //bootstrap 가져온 것
+
 
 
 
