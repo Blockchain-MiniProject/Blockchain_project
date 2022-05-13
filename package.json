@@ -9,7 +9,8 @@
     "block1": "cd blockchain && node main.js",
     "block2": "cd blockchain && node main2.js",
     "front" : "cd project-front && npm start",
-    "start": "concurrently \"npm run back\" \"npm run block1\" \"npm run block2\" \"npm run front\" "
+    "start": "concurrently \"npm run back\" \"npm run block1\" \"npm run block2\" \"npm run front\" ",
+    "postinstall": "(cd back && npm install) && (cd ../blockchain && npm install) && (cd ../project-front && npm install)"
   },
   "repository": {
     "type": "git",
