@@ -15,7 +15,7 @@
     "axios": "^0.27.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"react-scripts start\" \"node ../server/server.js\" \"node ../blockchain/main.js \" ",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
