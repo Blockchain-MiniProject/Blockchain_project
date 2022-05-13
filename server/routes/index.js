@@ -8,7 +8,6 @@ router.get('/', (req, res) => {
 })
 
 router.get("/blocks", MainController.getBlock)
-
 router.post("/addPeer", MainController.addPeer)
 router.post("/mineBlock", MainController.mineBlock)
 router.get("/dbBlocks", MainController.dbBlocks)
