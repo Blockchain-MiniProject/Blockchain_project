@@ -8,7 +8,7 @@
     "back": "cd back && node server.js",
     "block1": "cd blockchain && node main.js",
     "block2": "cd blockchain && node main2.js",
-    "front" : "cd project-front && npm start",
+    "front": "cd project-front && npm start",
     "start": "concurrently \"npm run back\" \"npm run block1\" \"npm run block2\" \"npm run front\" "
   },
   "repository": {
@@ -23,6 +23,10 @@
   },
   "homepage": "https://github.com/Blockchain-MiniProject/Blockchain_project#readme",
   "dependencies": {
-    "concurrently": "^7.1.0"
+    "concurrently": "^7.1.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-is": "^16.13.1",
+    "styled-components": "^5.3.5"
   }
 }

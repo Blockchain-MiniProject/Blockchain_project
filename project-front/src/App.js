@@ -5,17 +5,14 @@ import SearchBar from './components/SearchBar';
 import MainPage from './page/MainPage';
 import BlockPage from './page/BlockPage';
 
-
-
-// route
-
 function App() {
   return (
     <div>
       <SearchBar/>
       <Routes>
         <Route path="/" element={<MainPage/>}/>
-        <Route path="/blcok/:index" element={<BlockPage/>}/>
+        <Route path="/block/:hash" element={<BlockPage/>}/>
+        <Route path="/*" element={<MainPage/>} />
       </Routes>
     </div>
   );
