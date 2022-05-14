@@ -26,21 +26,20 @@ const initP2PServer = (p2pPort) => {
 const initConnection = (ws) => {
     console.log("ws = "+ws._socket.remoteAddress)
     if(sockets.length > 0) {
-        console.log("sockets = "+sockets[sockets.length-1]._socket.remoteAddress)
-        if(ws._socket.remoteAddress !== sockets[sockets.length-1]._socket.remoteAddress) {
+        if(!sockets.some((socket) => { return socket._socket.remoteAddress == ws._socket.remoteAddress})) {
             sockets.push(ws);
             initMessageHandler(ws);
 
             write(ws, queryAllMessage());
-        } else {
-            console.log("이미 연결한 아이피")
+            } else {
+            console.log("이미 연결된 아이피")
         }
     } else if(sockets.length === 0) {
         sockets.push(ws);
         initMessageHandler(ws);
 
         write(ws, queryAllMessage());
-    }
+    }        
 }
 
 const connectionToPeer = (newPeer) => {     
