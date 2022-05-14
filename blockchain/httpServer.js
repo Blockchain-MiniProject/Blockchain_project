@@ -35,7 +35,7 @@ const initHttpServer = (myHttpPoryt) => {
     })
 
     app.post('/addPeer', (req, res) => {
-        console.log('/addrPeer : ', req.body.message);
+        console.log('/addPeer : ', req.body.message);
         res.send(connectionToPeer(req.body.data));
     })
 
