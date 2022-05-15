@@ -142,4 +142,4 @@ const mineBlock = (blockdata) => {
     return "채굴됐어용"
 }
 
-export { initP2PServer, connectionToPeer, getPeers, broadcasting, mineBlock}
+export { initP2PServer, connectionToPeer, getPeers, broadcasting, mineBlock, initConnection}
