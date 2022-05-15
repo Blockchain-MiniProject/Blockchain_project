@@ -23,6 +23,11 @@ const initHttpServer = (myHttpPort) => {
         res.send(getBlocks());
     })
 
+    app.get('/blocks/:index', (req, res) => {
+        req.params.index
+        res.send(getBlocks());
+    })
+
     app.post('/createblock', (req, res) => {
         res.send(createBlock(req.body.data));        
     })
