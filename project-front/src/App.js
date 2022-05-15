@@ -11,7 +11,7 @@ function App() {
       <SearchBar/>
       <Routes>
         <Route path="/" element={<MainPage/>}/>
-        <Route path="/block/:hash" element={<BlockPage/>}/>
+        <Route path="/block/:index" element={<BlockPage/>}/>
         <Route path="/*" element={<MainPage/>} />
       </Routes>
     </div>
