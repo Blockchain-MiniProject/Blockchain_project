@@ -24,6 +24,10 @@
   },
   "homepage": "https://github.com/Blockchain-MiniProject/Blockchain_project#readme",
   "dependencies": {
-    "concurrently": "^7.1.0"
+    "concurrently": "^7.1.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-is": "^16.13.1",
+    "styled-components": "^5.3.5"
   }
 }
