@@ -133,7 +133,7 @@ const broadcasting = (message) => {
     });
 }
 
-const mineBlock = (blockdata) => {
+const mineBlock = async (blockdata) => {
     const newBlock = createBlock(blockdata);
     if(addblock(newBlock, getLatestBlock()))
     {

@@ -30,7 +30,7 @@ const calculateHash = (index, data, timestamp, previousHash, difficulty, nonce) 
 }
 
 const createGenesisBlock = () => {
-    const genesisBlock = new Block(0, 'The Times 03/Jan/2009 Chancellor on brink of second bailout for banks', 0 /* new Date().getTime() / 1000 */, 0, 0, 1, 0);
+    const genesisBlock = new Block(0, 'The Times 03/Jan/2009 Chancellor on brink of second bailout for banks', 0 /* new Date().getTime() / 1000 */, 0, 0, 2, 0);
 
     genesisBlock.hash = calculateHash(genesisBlock.index, genesisBlock.data, genesisBlock.timestamp, genesisBlock.previousHash, genesisBlock.difficulty, genesisBlock.nonce);
 
@@ -182,7 +182,7 @@ const replaceBlockchain = (receiveBlockchain) => {
 }
 
 const getAdjustmentDifficulty = () => {    
-    const prevAdjustedBlock = blocks[blocks.length - DIFFICULTY_ADJUSTMENT_INTERVAL - 1];
+    const prevAdjustedBlock = blocks[blocks.length - DIFFICULTY_ADJUSTMENT_INTERVAL ];
     const latestBlock = getLatestBlock();
     const elapsedTime = latestBlock.timestamp - prevAdjustedBlock.timestamp;
     const expectedTime = DIFFICULTY_ADJUSTMENT_INTERVAL * BLOCK_GENERATION_INTERVAL;

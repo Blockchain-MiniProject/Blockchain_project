@@ -26,8 +26,12 @@ const initHttpServer = (myHttpPoryt) => {
         res.send(createBlock(req.body.data));        
     })
     
-    app.post('/mineBlock', (req, res) => {
-        res.send(mineBlock(req.body.data));
+    app.post('/mineBlock', async (req, res) => {
+        for(let i=0; i<100; i++){
+            const minedBlock = await mineBlock(req.body.data)
+            console.log(minedBlock,i)
+        }
+        res.send("10번 채굴됨?")
     })
 
     app.post('/peers', (req, res) => {
