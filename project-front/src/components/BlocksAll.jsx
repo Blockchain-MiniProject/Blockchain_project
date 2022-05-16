@@ -1,50 +1,55 @@
 import React, { useEffect ,useState ,setTimeout } from 'react'
-import { useParams, useSearchParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { Container , Row, Col , Table}from 'react-bootstrap';
 
-// 1. 블록 해당 정보 값 가져오기
-// 2. 블록 그리드 하기
-
-// 3. map으로 뽑아보기
-
-// 4. 해쉬값 클릭하면 해당 해쉬값 사이트로 이동
-
-// 5. 어떻게 해야 버튼을 누르고 바로 데이터가 생길지?
-// 5_1. 데이터가 최신순으로 정열할지?
-// 6. 
-
-
-
 // 생각 정리하기
-// 1. 데이터 일단 가져 와보기
+
+
+// 1. 눌러서 사이트 이동 - done
+
+// 2. 누른 값을 어떻게 받을지?
+// 2_1. 변수
+
 
 
 const BlockAll = () => { 
 
   // let {hash} = useParams();
+  const navigate = useNavigate();
 
   // 초기값 배열값으로 줘야 map 함수 , 배열로 하면 안된다.
   const [allData,setAllData] = useState([]);
 
-  // const [qeury,setQeury] = useSearchParams();
-
-
-  const getBlockData = async () => {
-    // let searchQuery = qeury.get("q") || " ";
-    // console.log(response.data)
-    // let url =`http://localhost:3500/blocks` // ${hash}
+  const getBlockData = async (data1) => {
     let url = `http://localhost:3010/blocks`;
     let response = await fetch(url)
     let data = await response.json();
     console.log("data123123"  , data);
     console.log("block 123123" , allData );
     setAllData(data)
+
+    console.log("data: ",data[5]);
+
+    const click = () => {
+      navigate(`/block/${data[5]}`)
+    }
+
   }
 
 
-  // 렌더링 할때 바로 추가, 바뀔때마다 리 렌더링, 배열을
-  // 데이터가 같을때 다시 렌더링 안되게 해야한다.
-  
+  const searchHash = (index) => {
+    // console.log(data)
+    console.log(index)
+    // e.target.value
+
+    // console.log("asdfasdf" , allData.index[])
+    navigate(`/block/${index}`)
+    // navigate(`/block/1`)
+  }
+
+
+  // console.log("올데이타 ~~" , )
+
   // 참조롤 
   useEffect(() => {
     getBlockData()
@@ -59,18 +64,17 @@ const BlockAll = () => {
                   <th scope="col">#</th>
                   <th scope="col">시은</th>
                   <th scope="col">timestamp</th>
-                  <th scope="col">Hash</th>
+                  <th scope="col" >Hash</th>
                 </tr>
               </thead>
             <tbody>
                 {allData.map((data,index) => {
-                  return     <tr>
+                  return     <tr key={index}>
                                 <th scope="row">{data.index}</th>
                                 <td>{data.data}</td>
                                 <td>{data.timestamp}</td>
-                                <td>{data.hash}</td>
-                              </tr>
-            
+                                <td onClick={()=>{searchHash(data.index)}}>{data.hash} </td>
+                              </tr>            
                 })}
              </tbody>
             </Table>
@@ -81,6 +85,8 @@ const BlockAll = () => {
 
 export default BlockAll;
 
+
+// 클릭한 해쉬에 값에 id를 해쉬값으로 가져오기
 
 
 
