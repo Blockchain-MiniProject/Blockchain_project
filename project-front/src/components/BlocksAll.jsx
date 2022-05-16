@@ -53,24 +53,27 @@ const BlockAll = () => {
   return (
       <div>
           <Container>
-            <Row>
-                <Col>시은 </Col>
-                <Col>time</Col>
-                <Col>hash</Col>
-            </Row>
-            <Row>
+            <Table striped bordered hover>
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">시은</th>
+                  <th scope="col">timestamp</th>
+                  <th scope="col">Hash</th>
+                </tr>
+              </thead>
+            <tbody>
                 {allData.map((data,index) => {
-                  return <div key={index}>
-                    <Row>
-                      <Col className="table-td1">{data.data}</Col>     
-                      <Col className="table-td2">{data.timestamp}</Col>
-                      <Col >{data.hash}</Col>
-                    </Row>
-                  </div>
+                  return     <tr>
+                                <th scope="row">{data.index}</th>
+                                <td>{data.data}</td>
+                                <td>{data.timestamp}</td>
+                                <td>{data.hash}</td>
+                              </tr>
+            
                 })}
-            </Row>
-
-
+             </tbody>
+            </Table>
         </Container>
     </div>
   )
