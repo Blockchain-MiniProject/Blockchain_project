@@ -1,6 +1,6 @@
 import React, { useEffect ,useState ,setTimeout } from 'react'
 import { useParams, useSearchParams } from 'react-router-dom';
-import { Container , Row, Col}from 'react-bootstrap';
+import { Container , Row, Col , Table}from 'react-bootstrap';
 
 // 1. 블록 해당 정보 값 가져오기
 // 2. 블록 그리드 하기
@@ -48,16 +48,7 @@ const BlockAll = () => {
   // 참조롤 
   useEffect(() => {
     getBlockData()
-  },[allData])
-
-  // setInterval(getBlockData , 5000, allData )
-
-  // setTimeout(() => {
-  //   getBlockData()
-  // },[allData], 5000);
-
-
-
+  },[])
 
   return (
       <div>
