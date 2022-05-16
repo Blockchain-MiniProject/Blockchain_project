@@ -1,6 +1,6 @@
 import React, { useEffect ,useState ,setTimeout } from 'react'
 import { useParams, useSearchParams } from 'react-router-dom';
-import { Container , Row, Col}from 'react-bootstrap';
+import { Container , Row, Col , Table}from 'react-bootstrap';
 
 // 1. 블록 해당 정보 값 가져오기
 // 2. 블록 그리드 하기
@@ -48,38 +48,32 @@ const BlockAll = () => {
   // 참조롤 
   useEffect(() => {
     getBlockData()
-  },[allData])
-
-  // setInterval(getBlockData , 5000, allData )
-
-  // setTimeout(() => {
-  //   getBlockData()
-  // },[allData], 5000);
-
-
-
+  },[])
 
   return (
       <div>
           <Container>
-            <Row>
-                <Col>시은 </Col>
-                <Col>time</Col>
-                <Col>hash</Col>
-            </Row>
-            <Row>
+            <Table striped bordered hover>
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">시은</th>
+                  <th scope="col">timestamp</th>
+                  <th scope="col">Hash</th>
+                </tr>
+              </thead>
+            <tbody>
                 {allData.map((data,index) => {
-                  return <div key={index}>
-                    <Row>
-                      <Col className="table-td1">{data.data}</Col>     
-                      <Col className="table-td2">{data.timestamp}</Col>
-                      <Col >{data.hash}</Col>
-                    </Row>
-                  </div>
+                  return     <tr>
+                                <th scope="row">{data.index}</th>
+                                <td>{data.data}</td>
+                                <td>{data.timestamp}</td>
+                                <td>{data.hash}</td>
+                              </tr>
+            
                 })}
-            </Row>
-
-
+             </tbody>
+            </Table>
         </Container>
     </div>
   )
