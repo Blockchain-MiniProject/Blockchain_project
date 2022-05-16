@@ -12,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage/>}/>
         <Route path="/block/:index" element={<BlockPage/>}/>
+        <Route path="/block/*" element={<MainPage/>}/>
         <Route path="/*" element={<MainPage/>} />
       </Routes>
     </div>
