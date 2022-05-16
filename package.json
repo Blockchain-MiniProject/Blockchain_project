@@ -1,7 +1,33 @@
 {
+  "name": "blockchain_project",
+  "version": "1.0.0",
+  "description": "2022/05/11 ~ 2022/05/17",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "back": "cd back && node server.js",
+    "block1": "cd blockchain && node main.js",
+    "block2": "cd blockchain && node main2.js",
+    "front" : "cd project-front && npm start",
+    "start": "concurrently \"npm run back\" \"npm run block1\" \"npm run block2\" \"npm run front\" ",
+    "postinstall": "(cd back && npm install) && (cd ../blockchain && npm install) && (cd ../project-front && npm install)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blockchain-MiniProject/Blockchain_project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Blockchain-MiniProject/Blockchain_project/issues"
+  },
+  "homepage": "https://github.com/Blockchain-MiniProject/Blockchain_project#readme",
   "dependencies": {
-    "axios": "^0.27.2",
-    "cors": "^2.8.5",
-    "express": "^4.18.1"
+    "concurrently": "^7.1.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-is": "^16.13.1",
+    "styled-components": "^5.3.5"
   }
 }

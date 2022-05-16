@@ -24,12 +24,25 @@ const initP2PServer = (p2pPort) => {
 }
 
 const initConnection = (ws) => {
-    sockets.push(ws);
-    initMessageHandler(ws);
-    write(ws, queryAllMessage());    
+    console.log("ws = "+ws._socket.remoteAddress)
+    if(sockets.length > 0) {
+        if(!sockets.some((socket) => { return socket._socket.remoteAddress == ws._socket.remoteAddress})) {
+            sockets.push(ws);
+            initMessageHandler(ws);
+
+            write(ws, queryAllMessage());
+            } else {
+            console.log("이미 연결된 아이피")
+        }
+    } else if(sockets.length === 0) {
+        sockets.push(ws);
+        initMessageHandler(ws);
+
+        write(ws, queryAllMessage());
+    }        
 }
 
-const connectionToPeer = (newPeer) => { 
+const connectionToPeer = (newPeer) => {     
     console.log(newPeer)
     const ws = new WebSocket(newPeer) 
     ws.on('open', () => { initConnection(ws); console.log('Connect peer : ', newPeer ); })
@@ -126,6 +139,7 @@ const mineBlock = (blockdata) => {
     {
         broadcasting(responseLatestMessage());
     }
+    return "채굴됐어용"
 }
 
 export { initP2PServer, connectionToPeer, getPeers, broadcasting, mineBlock}

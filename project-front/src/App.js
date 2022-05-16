@@ -1,13 +1,20 @@
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-// import MiningButton from './components/MiningButton';
-import PostExample from './components/PostExample';
+import 'bootstrap/dist/css/bootstrap.min.css';          //bootstrap 가져온것
+import { Routes, Route } from "react-router-dom";
+import SearchBar from './components/SearchBar';
+import MainPage from './page/MainPage';
+import BlockPage from './page/BlockPage';
 
 function App() {
   return (
     <div>
-      {/* <MiningButton/> */}
-      <PostExample/>
+      <SearchBar/>
+      <Routes>
+        <Route path="/" element={<MainPage/>}/>
+        <Route path="/block/:id" element={<BlockPage/>}/>
+        <Route path="/block/*" element={<MainPage/>}/>
+        <Route path="/*" element={<MainPage/>} />
+      </Routes>
     </div>
   );
 }
