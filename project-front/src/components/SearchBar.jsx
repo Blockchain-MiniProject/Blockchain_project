@@ -12,9 +12,15 @@ const SearchBar = () => {
       navigate(`/block/${keyword}`);
     }
   }
+  const goToMain = () => {
+    navigate('/')
+  }
   
   return (
+    <>
     <Container className='search-bar'>
+    <div onClick={goToMain}> 메인으로 가기 </div>
+
       <InputGroup className="mb-3">
         <FormControl
           placeholder="Block, hash, transaction, etc..."
@@ -27,6 +33,7 @@ const SearchBar = () => {
         </Button> */}
       </InputGroup>   
     </Container>
+    </>
   )
 }
 
