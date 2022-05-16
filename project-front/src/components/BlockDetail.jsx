@@ -5,8 +5,8 @@ import { useParams } from 'react-router-dom'
 
 const BlockDetail = () => {
   // const blockDetailList = ['Index', 'Data', 'TimeStamp', 'Hash', 'PreviousHash', 'Difficulty', 'Nonce']
-  let {index} = useParams();
-  console.log("index: ", index);
+  let {id} = useParams();
+  console.log("id: ", id);
 
   const [block, setBlock] = useState(null);
   const getBlockDetail = async() => {
@@ -16,15 +16,19 @@ const BlockDetail = () => {
     console.log("data: ",data);
 
     //
-    // console.log(data.find((b) => { b.hash == index? setBlock})
+    const searchHash = data.find((b) =>  b.hash === id);
+    if (typeof id === "number") {
+      setBlock(data[id]);
+    } else {
+      setBlock(searchHash)
+    }
     
-    setBlock(data[index]);
     console.log("block: ", block)
   }
 
   useEffect(() => {
     getBlockDetail()
-  }, [index])
+  }, [id])
   
   return (
     <>
