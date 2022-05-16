@@ -8,9 +8,14 @@
     "back": "cd back && node server.js",
     "block1": "cd blockchain && node main.js",
     "block2": "cd blockchain && node main2.js",
+<<<<<<< HEAD
     "front" : "cd project-front && npm start",
     "start": "concurrently \"npm run back\" \"npm run block1\" \"npm run block2\" \"npm run front\" ",
     "postinstall": "(cd back && npm install) && (cd ../blockchain && npm install) && (cd ../project-front && npm install)"
+=======
+    "front": "cd project-front && npm start",
+    "start": "concurrently \"npm run back\" \"npm run block1\" \"npm run block2\" \"npm run front\" "
+>>>>>>> ebbadb7 (adsf)
   },
   "repository": {
     "type": "git",
@@ -25,9 +30,13 @@
   "homepage": "https://github.com/Blockchain-MiniProject/Blockchain_project#readme",
   "dependencies": {
     "concurrently": "^7.1.0",
+<<<<<<< HEAD
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-is": "^16.13.1",
     "styled-components": "^5.3.5"
+=======
+    "react-router-dom": "^6.3.0"
+>>>>>>> ebbadb7 (adsf)
   }
 }

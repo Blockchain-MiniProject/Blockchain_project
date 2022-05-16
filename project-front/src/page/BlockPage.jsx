@@ -1,5 +1,6 @@
 import React from 'react'
 import {Container , Row, Col}from 'react-bootstrap';
+import BlockDetail from '../components/BlockDetail';
 
 
 
@@ -12,9 +13,12 @@ const BlockPage = () => {
                 <Col>2 of 3</Col>
                 <Col>3 of 3</Col>
             </Row>
+
         </Container>
+        <BlockDetail />
+
     </div>
   )
 }
 
-export default BlockPage
+export default BlockPage;

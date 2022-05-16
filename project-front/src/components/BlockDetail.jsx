@@ -76,4 +76,4 @@ const BlockDetail = () => {
   )
 }
 
-export default BlockDetail
+export default BlockDetail;
