@@ -9,16 +9,6 @@ const AddButton = () => {
     const {peer} = e.target.value;
     console.log(userpeer.value);
 
-  //   try {
-  //     const result =  axios.post('http://localhost:3500/addPeer'
-  //     ,{
-  //       peer:peer.value
-  //     })
-  //     } catch(e) {
-  //       // 빈갑 에러
-  //       alert('접속 불량')
-  //     }
-  // }
   }
   return (
     <div>

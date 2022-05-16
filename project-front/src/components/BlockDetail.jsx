@@ -8,27 +8,21 @@ const BlockDetail = () => {
   let {index} = useParams();
   console.log("index: ", index);
 
-  const [block, setBlock] = useState(null);
+  const [block, setBlock] = useState("");
   const getBlockDetail = async() => {
-    let url = `http://localhost:3010/blocks`;
+    let url = `http://localhost:3010/blocks/${index}`;
     let response = await fetch(url);
     let data = await response.json();
-    console.log("data: ",data);
-
-    //
-    // console.log(data.find((b) => { b.hash == index? setBlock})
-    
-    setBlock(data[index]);
+    console.log("data: ",data)
+    setBlock(data);
     console.log("block: ", block)
   }
 
   useEffect(() => {
     getBlockDetail()
-  }, [index])
+  }, [])
   
-  return (
-    <>
-    {block?
+  return ( 
     <div>
       <Container>
         <Table striped bordered hover>
@@ -71,9 +65,7 @@ const BlockDetail = () => {
         </Table>
       </Container>
   </div>
-  : <h1>블록 정보 없음</h1>}
-  </>
   )
 }
 
-export default BlockDetail
+export default BlockDetail;
