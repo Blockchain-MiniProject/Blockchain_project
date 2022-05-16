@@ -40,7 +40,7 @@ const createGenesisBlock = () => {
 const createBlock = (blockdata) => {
     const previousBlock = blocks[blocks.length - 1];
     const nextIndex = previousBlock.index + 1;
-    const nextTimestamp = new Date().getTime();
+    const nextTimestamp = Math.floor(new Date().getTime() / 1000);
     const nextDifficulty = getDifficulty();
     const nextNonce = findNonce(nextIndex, blockdata, nextTimestamp, previousBlock.hash, nextDifficulty);
     const nextHash = calculateHash(nextIndex, blockdata, nextTimestamp, previousBlock.hash, nextDifficulty, nextNonce);
