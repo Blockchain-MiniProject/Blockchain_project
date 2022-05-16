@@ -77,7 +77,7 @@ const BlockDetail = () => {
         </Table>
       </Container>
   </div>
-  : <h1>블록 정보 없음 test</h1>}
+  : <h1>블록 정보 없음</h1>}
   </>
   )
 }
