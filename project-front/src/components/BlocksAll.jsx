@@ -1,4 +1,4 @@
-import React, { useEffect ,useState } from 'react'
+import React, { useEffect ,useState ,setTimeout } from 'react'
 import { useParams, useSearchParams } from 'react-router-dom';
 import { Container , Row, Col}from 'react-bootstrap';
 
@@ -50,25 +50,17 @@ const BlockAll = () => {
     getBlockData()
   },[allData])
 
+  // setInterval(getBlockData , 5000, allData )
+
+  // setTimeout(() => {
+  //   getBlockData()
+  // },[allData], 5000);
+
+
 
 
   return (
       <div>
-        {/* <div style={{ margin: '0 auto', marginTop: '10%' }}>
-            <label>Search:</label>
-            <input type="text" onChange={(event) =>handleSearch(event)} />
-        <button onClick={buttonAxiosget} > axios.get </button> */}
-                        {/* <div style={{padding:10}}>
-                  {filteredData.map((value,index)=>{
-                      return(
-                          <div key={value.id}>
-                              <div style={styles}>
-                                  {value.title}
-                              </div>
-                          </div>
-                      )
-                  })}
-                </div> */}
           <Container>
             <Row>
                 <Col>시은 </Col>
@@ -148,3 +140,18 @@ export default BlockAll;
   //   })
   // }, []);
 
+{/* <div style={{ margin: '0 auto', marginTop: '10%' }}>
+            <label>Search:</label>
+            <input type="text" onChange={(event) =>handleSearch(event)} />
+<button onClick={buttonAxiosget} > axios.get </button> */ }
+                //         <div style={{padding:10}}>
+                //   {filteredData.map((value,index)=>{
+                //       return(
+                //           <div key={value.id}>
+                //               <div style={styles}>
+                //                   {value.title}
+                //               </div>
+                //           </div>
+                //       )
+                //   })}
+                // </div> 
