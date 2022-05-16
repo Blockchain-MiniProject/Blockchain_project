@@ -10,9 +10,9 @@ const BlockDetail = () => {
 
   const navigate = useNavigate();
 
-  const [block, setBlock] = useState(null);
+  const [block, setBlock] = useState("");
   const getBlockDetail = async() => {
-    let url = `http://localhost:3010/blocks`;
+    let url = `http://localhost:3010/blocks/${index}`;
     let response = await fetch(url);
     let data = await response.json();
     console.log("data: ",data);
@@ -32,9 +32,7 @@ const BlockDetail = () => {
     getBlockDetail()
   }, [id])
   
-  return (
-    <>
-    {block?
+  return ( 
     <div>
       <Container>
         <Table striped bordered hover>
@@ -77,9 +75,7 @@ const BlockDetail = () => {
         </Table>
       </Container>
   </div>
-  : <h1>블록 정보 없음</h1>}
-  </>
   )
 }
 
-export default BlockDetail
+export default BlockDetail;

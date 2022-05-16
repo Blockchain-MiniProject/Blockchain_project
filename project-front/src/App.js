@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import SearchBar from './components/SearchBar';
 import MainPage from './page/MainPage';
 import BlockPage from './page/BlockPage';
+import React from 'react';
 
 function App() {
   return (
