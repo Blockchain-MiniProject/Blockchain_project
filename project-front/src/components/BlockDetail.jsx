@@ -1,26 +1,36 @@
 // block page  블록디테일
 import React, { useState, useEffect } from 'react'
 import { Container, Table } from 'react-bootstrap';
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const BlockDetail = () => {
   // const blockDetailList = ['Index', 'Data', 'TimeStamp', 'Hash', 'PreviousHash', 'Difficulty', 'Nonce']
-  let {index} = useParams();
-  console.log("index: ", index);
+  let {id} = useParams();
+  console.log("id: ", id, typeof id);
+
+  const navigate = useNavigate();
 
   const [block, setBlock] = useState("");
   const getBlockDetail = async() => {
     let url = `http://localhost:3010/blocks/${index}`;
     let response = await fetch(url);
     let data = await response.json();
-    console.log("data: ",data)
-    setBlock(data);
-    console.log("block: ", block)
+    console.log("data: ",data);
+
+    //
+    const searchHash = data.find((b) =>  b.hash === id);
+    if(Number(id) === 0 || Number(id)) {
+      setBlock(data[id])
+    } else {
+      setBlock(searchHash);
+      navigate(`/block/${searchHash.index}`);
+    }     
+    // console.log("block: ", block)
   }
 
   useEffect(() => {
     getBlockDetail()
-  }, [])
+  }, [id])
   
   return ( 
     <div>
