@@ -10,13 +10,14 @@ const MainPage = () => {
 
   return (
     <>
-      <BlocksAll/>
+
       <MiningButton/>
+      <BlocksAll/>
       {/* <PostExample/> */}
 
 
       {/* 지울거임 */}
-      <BlockDetail/>
+      {/* <BlockDetail/> */}
     </>
   )
 }
