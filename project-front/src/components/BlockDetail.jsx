@@ -32,7 +32,9 @@ const BlockDetail = () => {
     getBlockDetail()
   }, [id])
   
-  return ( 
+  return (
+    <>
+    {block?
     <div>
       <Container>
         <Table striped bordered hover>
@@ -75,6 +77,8 @@ const BlockDetail = () => {
         </Table>
       </Container>
   </div>
+  : <h1>블록 정보 없음</h1>}
+  </>
   )
 }
 
