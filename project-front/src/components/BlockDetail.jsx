@@ -20,7 +20,7 @@ const BlockDetail = () => {
     //
     const searchHash = data.find((b) =>  b.hash === id);
     if(Number(id) === 0 || Number(id)) {
-      setBlock(data[id])
+      setBlock(data[data.length-id-1])
     } else {
       setBlock(searchHash);
       navigate(`/block/${searchHash.index}`);

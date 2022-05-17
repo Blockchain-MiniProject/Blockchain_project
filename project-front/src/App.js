@@ -17,7 +17,7 @@ function App() {
     <div className='body'>
       <NavBar auth={authenticate} setAuth={setAuthenticate}/>
       <Routes>
-        <Route path="/" element={<MainPage/>}/>
+        <Route path="/" element={<MainPage authenticate={authenticate} />}/>
         <Route path="/block/:id" element={<BlockPage/>}/>
         <Route path="/login" element={<LoginPage setAuthenticate={setAuthenticate}/>}/>
         <Route path="/signup" element={<SignupPage/>}/>

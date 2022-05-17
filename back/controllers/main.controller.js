@@ -10,9 +10,9 @@ export const addPeer = async (req,res) => {
 
 
 export const getBlock = async (req,res) => {
-    console.log("trying to getBlock");
+    // console.log("trying to getBlock");
     const result = await axios.get("http://localhost:3010/blocks")
-    res.send(result.data)
+    res.json(result.data.reverse())
 }
 
 
