@@ -1,13 +1,15 @@
-import React, {useState, useEffect} from 'react'
-import axios from "axios"
+import React, { useState , useEffect } from 'react'
 import MiningButton from '../components/MiningButton'
 import PostExample from '../components/PostExample'
 import BlockDetail from '../components/BlockDetail'
 import BlocksAll from '../components/BlocksAll'
 import SearchBar from '../components/SearchBar'
+import axios from 'axios'
 
+// 1. authenticate 를 이용해서 해결해보기 사이트 이동 해보기
+// 2. 
 
-const MainPage = () => {
+const MainPage = ({authenticate}) => {
 
   const [allData,setAllData] = useState([]);
 
@@ -39,15 +41,15 @@ const MainPage = () => {
   return (
     <>
       <SearchBar/>
-      <MiningButton onClick={handleClick} />
-      <BlocksAll allData={allData} />
-      {/* <PostExample/> */}
-
-
-      {/* 지울거임 */}
-      {/* <BlockDetail/> */}
+      {
+        authenticate
+        ? <MiningButton />
+        : <div> 로그인시 마이닝 버튼 생성 </div>
+      }
+      {/* <BlocksAll/> */}
     </>
   )
 }
 
 export default MainPage
+
