@@ -26,10 +26,9 @@ const Mypage = () => {
 
   return (
     <Container>
-      <Form className='mypage-form' onSubmit={(e)=>(callData(e))}>
+      <Form className='mypage-form'>
         <h2>마이페이지</h2>
         <fieldset disabled>
-          <div> {user.value} </div>
           <Form.Group className="mb-3" >
             <Form.Label htmlFor="disabledTextInput">지갑 주소</Form.Label>
             <Form.Control id="disabledTextInput" placeholder={myInfo.address} />
