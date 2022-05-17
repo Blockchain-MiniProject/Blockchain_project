@@ -59,14 +59,16 @@
   cursor: pointer;
  }
 
- .logout-button {
+.logout-button {
+  display: flex;
+  /* justify-content: end; */
   position: absolute;
   top: 1px;
   right: 28px;
   margin-right: 30px;
   cursor: pointer;
   text-align: center;
-  -webkit-animation:text-pop-up-bottom .8s ease-in both;animation:text-pop-up-bottom .8s ease-in both
+  /* -webkit-animation:text-pop-up-bottom .8s ease-in both;animation:text-pop-up-bottom .8s ease-in both */
  }
 
 .main-logo {
