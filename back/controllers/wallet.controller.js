@@ -65,9 +65,14 @@ export const loginClick = async (req,res) => {
 
     console.log("address : ",address)
     try {
-        const sql = `select * from userinfo where address = "${address}";`
-        const [[result]] = await pool.query(sql); 
-        res.send(result)
+        const iSql = `select * from userinfo where address = "${address}";`
+        const [[infoResult]] = await pool.query(iSql); 
+
+        const bSql = `select * from blocks where miner = "${address}";`
+        const [blockResult] = await pool.query(bSql)
+
+
+        res.send([infoResult,blockResult])
     }
     catch (e) {
         throw e;
