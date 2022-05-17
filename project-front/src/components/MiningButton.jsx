@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import axios from 'axios';
 
 const MiningButton = (e) => {
@@ -18,9 +18,9 @@ const MiningButton = (e) => {
   }
   
   return (
-    <div>
-      <Button variant="warning" onClick={handleClick}>miningButton</Button>
-    </div>
+    <Container>
+      <Button variant="secondary" className='mining-button' onClick={handleClick}>miningButton</Button>
+    </Container>
   )
 }
 
