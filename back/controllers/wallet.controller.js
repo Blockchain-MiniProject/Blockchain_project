@@ -24,7 +24,7 @@ export const createUser = async (req,res) => {
     console.log(publickey);
     try {
         const sql = "INSERT INTO userinfo(email,password,privatekey,address,balance) VALUES(?,?,?,?,0);"
-        const [result] = await pool.query(sql,[email,password,privatekey,publickey]); //await 안하면 pending
+        const [result] = await pool.query(sql,[email,password,privatekey,publickey]);
         console.log(result);    
     }
     catch (e) {
