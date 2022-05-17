@@ -13,16 +13,17 @@ const NavBar = () => {
   }
 
   return (
-    <div>
+    <div className='nav-bar'>
       <div className='login-button' onClick={goToLogin}>
           <FontAwesomeIcon icon={faUser} />
           <div>로그인</div>
       </div>
-      <div className='nav-section' onClick={goToMain}>
+      <div className='main-logo' onClick={goToMain}>
         <img
-          width={100}
-          src=""
+          width={50}
+          src="https://cdn-icons-png.flaticon.com/512/1349/1349733.png"
         />
+        <div>Block4</div>
       </div>
     </div>
   )
