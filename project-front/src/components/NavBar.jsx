@@ -14,6 +14,9 @@ const NavBar = ({auth, setAuth}) => {
     setAuth(false)
     navigate('/')
   }
+  const goToMypage = () => {
+    navigate('/mypage')
+  }
 
   return (
     <div className='nav-bar'>
@@ -28,14 +31,22 @@ const NavBar = ({auth, setAuth}) => {
             <h6>로그인</h6>
         </div>
         :
-        <div className='logout-button' onClick={logOut} >
+        <div className='logout-button'>
+          <div className='mypage-button' onClick={goToMypage}>  
+            <img
+              width={50}
+              src="https://cdn-icons.flaticon.com/png/512/3093/premium/3093847.png?token=exp=1652778755~hmac=295992b1210b8f0ac2f77cabd5cc81f8"
+            />
+            <h6>내정보</h6>
+          </div>
+          <div onClick={logOut}>
             <img
               width={80}
               src={logout}
               alt='로그아웃'
             />
-            {/* <FontAwesomeIcon icon={faUser} /> */}
             <h6>로그아웃</h6>
+          </div>  
         </div>
       }
       <div className='main-logo' onClick={goToMain}>

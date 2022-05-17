@@ -14,7 +14,7 @@ const Mypage = () => {
         address: address
       }
     })
-    setMyInfo(result)
+    setMyInfo(result.data)
   }
 
   useEffect(
@@ -30,15 +30,15 @@ const Mypage = () => {
         <fieldset disabled>
           <Form.Group className="mb-3">
             <Form.Label htmlFor="disabledTextInput">지갑 주소</Form.Label>
-            <Form.Control id="disabledTextInput" placeholder="지갑주소 생성 수정불가" />
+            <Form.Control id="disabledTextInput" placeholder={myInfo.address} />
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label htmlFor="disabledTextInput">잔액</Form.Label>
-            <Form.Control id="disabledTextInput" placeholder="잔액 수정불가" />
+            <Form.Control id="disabledTextInput" placeholder={myInfo.balance} />
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label htmlFor="disabledTextInput">이메일</Form.Label>
-            <Form.Control id="disabledTextInput" placeholder="이메일 가져오기 수정불가" />
+            <Form.Control id="disabledTextInput" placeholder={myInfo.email} />
           </Form.Group>
         </fieldset>
           <Form.Group className="mb-3">

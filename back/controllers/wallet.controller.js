@@ -53,7 +53,7 @@ export const loginClick = async (req,res) => {
           res.send('er')
         }
         else{
-          res.send('success')
+          res.send(result[0].address)
         }
     }
     catch (e) {
@@ -66,7 +66,7 @@ export const loginClick = async (req,res) => {
 
     console.log("address : ",address)
     try {
-        const sql = `select * from userinfo where address = ${address};`
+        const sql = `select * from userinfo where address = "${address}";`
         const [[result]] = await pool.query(sql); 
         res.send(result)
     }
