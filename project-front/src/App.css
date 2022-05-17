@@ -93,6 +93,12 @@
   margin-left: 15px;
 }
 
+/* BlockDetail - components */
+.block-detail {
+  margin: 10vh 0 5vh 0;
+  padding: 15px;
+  border: 1px solid black;
+}
 /* SignupPage - page */
 .signup-form {
   margin: 15vh 20vw;

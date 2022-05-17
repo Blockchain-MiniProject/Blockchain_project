@@ -1,5 +1,7 @@
 import React, { useEffect ,useState ,setTimeout } from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCopy } from '@fortawesome/free-regular-svg-icons'
 import { Container , Row, Col , Table}from 'react-bootstrap';
 
 
@@ -61,7 +63,7 @@ const BlockAll = ({allData}) => {
                           <td>{data.data}</td>
                           <td>{data.timestamp}</td>
                           {/* 실행구문이 있어서 */}
-                          <td onClick={()=>{searchHash(data.index)}}>{data.hash} </td>
+                          <td onClick={()=>{searchHash(data.index)}}><b>{data.hash}</b></td>
                         </tr>            
           })}
         </tbody>

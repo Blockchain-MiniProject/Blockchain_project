@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import logout from "../img/logout.png"
+import user from "../img/user.png"
 
 const NavBar = ({auth, setAuth}) => {
   const navigate = useNavigate()
@@ -35,7 +36,7 @@ const NavBar = ({auth, setAuth}) => {
           <div className='mypage-button' onClick={goToMypage}>  
             <img
               width={50}
-              src="https://cdn-icons.flaticon.com/png/512/3093/premium/3093847.png?token=exp=1652778755~hmac=295992b1210b8f0ac2f77cabd5cc81f8"
+              src={user}
             />
             <h6>내정보</h6>
           </div>
