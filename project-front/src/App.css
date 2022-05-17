@@ -9,3 +9,16 @@
 .table-td2 {
   width: 500px;
 }
+
+.login-button {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px;
+  cursor: pointer;
+ }
+
+ .nav-section {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
