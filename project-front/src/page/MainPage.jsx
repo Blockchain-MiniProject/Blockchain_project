@@ -39,12 +39,11 @@ const MainPage = ({authenticate}) => {
   return (
     <>
       <SearchBar/>
-      <MiningButton onClick={handleClick} />
-      {/* {
+      {
         authenticate
-        ? <MiningButton />
-        : <div> 로그인시 마이닝 버튼 생성 </div>
-      } */}
+        ?<MiningButton onClick={handleClick} />
+        :""
+      }
       <BlocksAll allData={allData} />
     </>
   )

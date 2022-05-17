@@ -23,7 +23,6 @@ const SearchBar = () => {
           aria-describedby="basic-addon2"
           onKeyPress={(e) => search(e)}
         />
-        <Button variant="outline-info">블록 찾기</Button>{' '}
       </InputGroup>   
     </Container>
     </>
