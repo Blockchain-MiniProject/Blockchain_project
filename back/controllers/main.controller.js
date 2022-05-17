@@ -18,6 +18,7 @@ export const getBlock = async (req,res) => {
 
 export const mineBlock = async (req,res) => {
     const address = req.body.address;
-    const result = await axios.post("http://localhost:3010/mineBlock",{data:address})
+    // const result = await axios.post("http://localhost:3010/mineBlock",{data:address})
+    const result = await axios.post("http://localhost:3010/mineBlock",{data:"sieun"})
     res.send(result.data)
 }

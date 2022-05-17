@@ -12,7 +12,7 @@ const BlockAll = () => {
   const [allData,setAllData] = useState([]);
 
   const getBlockData = async (data1) => {
-    let url = `http://localhost:3010/blocks`;
+    let url = `http://localhost:3500/blocks`;
     let response = await fetch(url)
     let data = await response.json();
     console.log("data123123"  , data);
