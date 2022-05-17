@@ -32,6 +32,7 @@ const initConnection = (ws) => {
 
             write(ws, queryAllMessage());
             } else {
+            initMessageHandler(ws);
             console.log("이미 연결된 아이피")
         }
     } else if(sockets.length === 0) {
@@ -139,7 +140,7 @@ const mineBlock = (blockdata) => {
     {
         broadcasting(responseLatestMessage());
     }
-    return "채굴됐어용"
+    return newBlock
 }
 
-export { initP2PServer, connectionToPeer, getPeers, broadcasting, mineBlock}
+export { initP2PServer, connectionToPeer, getPeers, broadcasting, mineBlock, initConnection}

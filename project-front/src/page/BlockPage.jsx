@@ -1,12 +1,14 @@
 import React from 'react'
-import BlockDetail from '../components/BlockDetail'
+import BlockDetail from '../components/BlockDetail';
+import SearchBar from '../components/SearchBar';
 
 const BlockPage = () => {
   return (
-    <>
-      <BlockDetail/>
-    </>
+    <div>
+        <SearchBar/>
+        <BlockDetail />
+    </div>
   )
 }
 
-export default BlockPage
+export default BlockPage;

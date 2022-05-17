@@ -2,10 +2,10 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import { getBlocks, createBlock } from './block.js';
-import { connectionToPeer, getPeers, mineBlock } from './p2pServer.js';
+import { connectionToPeer, getPeers, mineBlock, initConnection } from './p2pServer.js';
 
 // 초기화 함수
-const initHttpServer = (myHttpPoryt) => {
+const initHttpServer = (myHttpPort) => {
     const app = express();    
     app.use(express.urlencoded({extended:true}))
     app.use(bodyParser.json());
@@ -16,6 +16,7 @@ const initHttpServer = (myHttpPoryt) => {
 
     app.get('/', (req, res) => {        
         res.send('Hello, World!');
+        // res.send(connectionToPeer(req.body.data));
     })
 
     app.get('/blocks', (req, res) => {
@@ -47,8 +48,8 @@ const initHttpServer = (myHttpPoryt) => {
         res.send(queryLatestMessage(req.body.data))
     })
 
-    app.listen(myHttpPoryt, () => {
-        console.log('listening httpServer Port : ', myHttpPoryt);
+    app.listen(myHttpPort, () => {
+        console.log('listening httpServer Port : ', myHttpPort);
     })
 }
 

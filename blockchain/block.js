@@ -40,7 +40,7 @@ const createGenesisBlock = () => {
 const createBlock = (blockdata) => {
     const previousBlock = blocks[blocks.length - 1];
     const nextIndex = previousBlock.index + 1;
-    const nextTimestamp = new Date().getTime() / 1000;
+    const nextTimestamp = Math.floor(new Date().getTime() / 1000);
     const nextDifficulty = getDifficulty();
     const nextNonce = findNonce(nextIndex, blockdata, nextTimestamp, previousBlock.hash, nextDifficulty);
     const nextHash = calculateHash(nextIndex, blockdata, nextTimestamp, previousBlock.hash, nextDifficulty, nextNonce);
@@ -182,7 +182,7 @@ const replaceBlockchain = (receiveBlockchain) => {
 }
 
 const getAdjustmentDifficulty = () => {    
-    const prevAdjustedBlock = blocks[blocks.length - DIFFICULTY_ADJUSTMENT_INTERVAL - 1];
+    const prevAdjustedBlock = blocks[blocks.length - DIFFICULTY_ADJUSTMENT_INTERVAL];
     const latestBlock = getLatestBlock();
     const elapsedTime = latestBlock.timestamp - prevAdjustedBlock.timestamp;
     const expectedTime = DIFFICULTY_ADJUSTMENT_INTERVAL * BLOCK_GENERATION_INTERVAL;
