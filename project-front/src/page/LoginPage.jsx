@@ -11,6 +11,8 @@ const LoginPage = (props) => {
   //   navigate('/')
   // }
 
+  const mtStorage = window.localStorage;
+
 
   const loginAfter = (e) => {
     e.preventDefault();

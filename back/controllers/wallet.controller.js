@@ -25,7 +25,7 @@ export const createUser = async (req,res) => {
     try {
         const sql = "INSERT INTO userinfo(email,password,privatekey,address,balance) VALUES(?,?,?,?,0);"
         const [result] = await pool.query(sql,[email,password,privatekey,publickey]);
-        console.log(result);    
+        console.log(result);
     }
     catch (e) {
         throw e;
@@ -50,7 +50,7 @@ export const loginClick = async (req,res) => {
         if(result.length===0){
         //   console.log("이메일 비밀번호 불일치")
           // 메세지를보
-          res.send('er')
+          res.send('error')
         }
         else{
           res.send(result[0].address)
