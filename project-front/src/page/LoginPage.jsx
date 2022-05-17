@@ -36,7 +36,9 @@ const LoginPage = (props) => {
     // res 저장
     .then((res)=> {
       navigate('/')
-      localStorage.setItem("address",res.data)
+      const {address, email} = res.data
+      localStorage.setItem("address",address)
+      localStorage.setItem("id",email.split("@")[0])
       // 메세지에 따라서 행동을 할수잇따
     })
     

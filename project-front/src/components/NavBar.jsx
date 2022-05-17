@@ -14,6 +14,8 @@ const NavBar = ({auth, setAuth}) => {
   const logOut = () => {
     setAuth(false)
     navigate('/')
+    localStorage.removeItem("address")
+    localStorage.removeItem("id")
   }
   const goToMypage = () => {
     navigate('/mypage')
