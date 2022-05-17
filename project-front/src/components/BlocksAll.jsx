@@ -2,22 +2,6 @@ import React, { useEffect ,useState ,setTimeout } from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
 import { Container , Row, Col , Table}from 'react-bootstrap';
 
-// 생각 정리하기
-
-
-// 1. 눌러서 사이트 이동 - done
-
-// 2. 누른 값을 어떻게 받을지?
-// 2_1. 변수 
-
-// 1.nava
-// 2. key 찾아가서
-// 3. oncllik naviaaget 쓴다.
-
-// const
-
-
-
 
 const BlockAll = () => { 
 
@@ -54,9 +38,6 @@ const BlockAll = () => {
     // navigate(`/block/1`)
   }
 
-
-  // console.log("올데이타 ~~" , )
-
   // 참조롤 
   useEffect(() => {
     getBlockData()
@@ -69,7 +50,7 @@ const BlockAll = () => {
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">시은</th>
+                  <th scope="col">시은거래소</th>
                   <th scope="col">timestamp</th>
                   <th scope="col" >Hash</th>
                 </tr>
@@ -87,6 +68,7 @@ const BlockAll = () => {
              </tbody>
             </Table>
         </Container>
+
     </div>
   )
 }
@@ -95,12 +77,6 @@ export default BlockAll;
 
 
 // 클릭한 해쉬에 값에 id를 해쉬값으로 가져오기
-
-
-
-
-
-
 
  // const handleSearch = (event) => {
   //   let value = event.target.value.toLowerCase();
