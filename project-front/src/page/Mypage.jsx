@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom';
-import { Container, Form, Button, Table } from 'react-bootstrap'
+import { Container, Form, Button, Table, Tooltip, OverlayTrigger } from 'react-bootstrap'
 import axios from "axios"
 
 const Mypage = () => {
@@ -31,6 +31,12 @@ const Mypage = () => {
     callApi();
   }
   ,[])
+
+  const renderTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      click to view this block
+    </Tooltip>
+  );
 
   console.log(myInfo)
   console.log(blocks)
@@ -76,15 +82,22 @@ const Mypage = () => {
         {blocks.map((block,index) => {
           const time = Number(block.timestamp)*1000;
           const date = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(time);
-          //console.log(date);
-          return     <tr key={index}>
-                        <th scope="row">{block.index}</th>
-                        <td>{block.data}</td>
-                        <td>{date}</td>
-                        {/* <td>{() => timeStamp(data.timestamp)}</td> */}
-                        {/* 실행구문이 있어서 */}
-                        <td className='block-hash' onClick={()=>{searchHash(block.index)}}><b>{block.hash}</b></td>
-                      </tr>            
+          return (
+            <tr key={index}>
+              <th scope="row">{block.index}</th>
+              <td>{block.data}</td>
+              <td>{date}</td>
+              {/* <td>{() => timeStamp(data.timestamp)}</td> */}
+              {/* 실행구문이 있어서 */}
+              <OverlayTrigger
+                  placement="left"
+                  delay={{ show: 0, hide: 400 }}
+                  overlay={renderTooltip}
+                >
+                  <td className='block-hash' onClick={()=>{searchHash(block.index)}}><b>{block.hash}</b></td>
+              </OverlayTrigger>
+            </tr>
+          )
         })}
       </tbody>
     </Table>

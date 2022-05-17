@@ -1,6 +1,6 @@
 // block page  블록디테일
 import React, { useState, useEffect } from 'react'
-import { Container, Table } from 'react-bootstrap';
+import { Container, Table, Tooltip, OverlayTrigger } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopy } from '@fortawesome/free-regular-svg-icons'
 import { useNavigate, useParams } from 'react-router-dom'
@@ -30,6 +30,18 @@ const BlockDetail = () => {
   useEffect(() => {
     getBlockDetail()
   }, [id])
+
+  const renderTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      click to view this block
+    </Tooltip>
+  );
+
+  const copyTooltip = (props) => (
+    <Tooltip {...props} >
+      copied
+    </Tooltip>
+  );
 
   const clickH = (index) => {
     // previous hash
@@ -77,11 +89,29 @@ const BlockDetail = () => {
             </tr>
             <tr>
               <td>Hash</td>
-              <td><b>{block?.hash}</b> &nbsp; <FontAwesomeIcon icon={faCopy} onClick={CopyHash}/></td>
+              <td><b>{block?.hash}</b> &nbsp; 
+              <OverlayTrigger
+                placement="right"
+                delay={{ show: 0, hide: 200 }}
+                overlay={copyTooltip}
+                trigger="click"
+                rootClose
+                
+              >
+              <span><FontAwesomeIcon icon={faCopy} style={{cursor:'pointer'}} onClick={CopyHash}/></span>
+              </OverlayTrigger>
+              </td>
             </tr>
             <tr>
               <td>Previous Hash</td>
-              <td onClick={() =>clickH(block.index-1)}>{block?.previousHash}</td>
+              <OverlayTrigger
+                placement="left"
+                delay={{ show: 0, hide: 400 }}
+                overlay={renderTooltip}
+              >
+                <td onClick={() =>clickH(block.index-1)} style={{cursor:'pointer'}}><b>{block?.previousHash}</b></td>
+              </OverlayTrigger>
+              
             </tr>
             <tr>
               <td>Difficulty</td>

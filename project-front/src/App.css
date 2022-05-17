@@ -22,6 +22,7 @@
 
 .block-hash {
   word-break: break-all;
+  cursor: pointer;
 }
 
 /* MiningButton - component */
