@@ -1,7 +1,5 @@
 import React, { useState , useEffect } from 'react'
 import MiningButton from '../components/MiningButton'
-import PostExample from '../components/PostExample'
-import BlockDetail from '../components/BlockDetail'
 import BlocksAll from '../components/BlocksAll'
 import SearchBar from '../components/SearchBar'
 import axios from 'axios'
