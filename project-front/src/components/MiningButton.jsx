@@ -19,7 +19,7 @@ const MiningButton = ({ onClick }) => {
   
   return (
     <Container>
-      <Button variant="secondary" className='mining-button' onClick={handleClick}>miningButton</Button>
+      <Button variant="secondary" className='mining-button' onClick={onClick}>miningButton</Button>
     </Container>
   )
 }

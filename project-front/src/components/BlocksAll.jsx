@@ -56,7 +56,7 @@ const BlockAll = ({allData}) => {
                 </tr>
               </thead>
             <tbody>
-                {allData.reverse().map((data,index) => {
+                {allData.map((data,index) => {
                   return     <tr key={index}>
                                 <th scope="row">{data.index}</th>
                                 <td>{data.data}</td>

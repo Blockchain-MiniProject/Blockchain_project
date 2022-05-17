@@ -24,7 +24,7 @@ const MainPage = () => {
       getBlockData()
       const result = await axios.post('http://localhost:3500/mineBlock', /* data : */ null)
       console.log(result.data)
-      setAllData([...allData.reverse(),result.data])
+      setAllData([result.data,...allData])
     }catch(e){         //에러감지
       // 비어있을시
       alert('error')
