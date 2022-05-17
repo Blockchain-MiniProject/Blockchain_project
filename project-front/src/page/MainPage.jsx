@@ -8,9 +8,7 @@ import SearchBar from '../components/SearchBar'
 
 
 const MainPage = () => {
-
   const [allData,setAllData] = useState([]);
-
 
   const getBlockData = async () => {
     const url = `http://localhost:3500/blocks`;
@@ -29,7 +27,6 @@ const MainPage = () => {
       // 비어있을시
       alert('error')
     }
-
   }
 
   useEffect(()=>{
@@ -41,11 +38,6 @@ const MainPage = () => {
       <SearchBar/>
       <MiningButton onClick={handleClick} />
       <BlocksAll allData={allData} />
-      {/* <PostExample/> */}
-
-
-      {/* 지울거임 */}
-      {/* <BlockDetail/> */}
     </>
   )
 }

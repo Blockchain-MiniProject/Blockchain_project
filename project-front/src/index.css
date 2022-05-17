@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Gugi&family=Kirang+Haerang&display=swap');
+
 body {
+  font-family: 'Gugi', cursive;
   background-color: rgb(241, 241, 241, 0.5);
   /* background-color: red; */
   margin: 0;
