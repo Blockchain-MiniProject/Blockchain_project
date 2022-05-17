@@ -33,11 +33,11 @@ const LoginPage = (props) => {
     })
     // res 저장
     .then((res)=> {
-      console.log(res)
       navigate('/')
+      localStorage.setItem("address",res.data)
       // 메세지에 따라서 행동을 할수잇따
     })
-    localStorage.setItem("address","044dad503e6fda5d177d1df91ada3523b7aed894f9c85c55904fe8580a2cca569b64724a650b0fd271cbe991b6cdc356536371e0bed15b7cd41e5c8626ecfe972e")
+    
     // props.setAuthenticate(true)
     // navigate('/')
   }

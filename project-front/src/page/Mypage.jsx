@@ -17,8 +17,9 @@ const Mypage = () => {
     setMyInfo(result.data)
   }
 
-  useEffect(
-    callApi
+  useEffect(()=>{
+    callApi();
+  }
   ,[])
   
   console.log(myInfo)
