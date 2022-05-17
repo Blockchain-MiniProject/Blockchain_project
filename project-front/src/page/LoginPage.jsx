@@ -50,37 +50,25 @@ const LoginPage = (props) => {
     navigate('/signup')
   }
 
-
-
-
-  
-
   return (
     <Container>
-        <Form  onSubmit={(e) => {loginAfter(e)}}>
+        <Form className='login-form' onSubmit={(e) => {loginAfter(e)}}>
+          <h3>로그인</h3>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>login</Form.Label>
-            <Form.Control type="email" name="email" placeholder="Enter email" />
-            <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
-            </Form.Text>
+            <Form.Label>이메일</Form.Label>
+            <Form.Control type="email" name="email" placeholder="이메일을 입력해주세요." />
           </Form.Group>
-
           <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>password</Form.Label>
-            <Form.Control type="password" name="password" placeholder="Password" />
+            <Form.Label>비밀번호</Form.Label>
+            <Form.Control type="password" name="password" placeholder="비밀번호를 입력해주세요." />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
-          </Form.Group>
-          <Button type="submit"  onClick={() => {clickHandler()}} >
+          <Button type="submit" variant="primary" onClick={() => {clickHandler()}} >
             로그인
           </Button>
-          <Button type="submit" variant="danger"  onClick={() => {clickToSign()}} >
+          <Button type="submit" variant="outline-primary" onClick={() => {clickToSign()}} >
             회원가입
           </Button>
         </Form>
-
     </Container>
   )
 }

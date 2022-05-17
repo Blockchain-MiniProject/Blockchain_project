@@ -1,6 +1,8 @@
 // block page  블록디테일
 import React, { useState, useEffect } from 'react'
 import { Container, Table } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCopy } from '@fortawesome/free-regular-svg-icons'
 import { useNavigate, useParams } from 'react-router-dom'
 
 const BlockDetail = () => {
@@ -39,11 +41,17 @@ const BlockDetail = () => {
     }
   }
 
+  const CopyHash = () => {
+    console.log(block.hash);
+  
+    navigator.clipboard.writeText(block.hash)/* .then(() => {
+      ToastsPop()
+    }) */;
+  };
   
   return (
     <>
     {block?
-    <div>
       <Container>
         <Table striped bordered hover>
           <thead>
@@ -67,7 +75,7 @@ const BlockDetail = () => {
             </tr>
             <tr>
               <td>Hash</td>
-              <td>{block?.hash}</td>
+              <td>{block?.hash} &nbsp; <FontAwesomeIcon icon={faCopy} onClick={CopyHash}/></td>
             </tr>
             <tr>
               <td>Previous Hash</td>
@@ -84,8 +92,7 @@ const BlockDetail = () => {
           </tbody>
         </Table>
       </Container>
-  </div>
-  : <h1>블록 정보 없음</h1>}
+  : <Container><h1>블록 정보 없음</h1></Container>}
   </>
   )
 }

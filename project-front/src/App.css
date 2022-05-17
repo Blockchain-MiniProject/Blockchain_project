@@ -69,7 +69,17 @@
   cursor: pointer;
   text-align: center;
   /* -webkit-animation:text-pop-up-bottom .8s ease-in both;animation:text-pop-up-bottom .8s ease-in both */
- }
+}
+
+.mypage-button {
+  position: absolute;
+  top: 20px;
+  right: 100px;
+}
+
+.mypage-button img {
+  margin-bottom: 11px;
+}
 
 .main-logo {
   display: flex;
@@ -90,7 +100,7 @@
 
 .signup-form h3 {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 /* Mypage - page */
@@ -100,4 +110,14 @@
 
 .mypage-form h2 {
   text-align: center;
+}
+
+/* LoginPage - page */
+.login-form {
+  margin: 15vh 20vw;
+}
+
+.login-form h3 {
+  text-align: center;
+  margin-bottom: 20px;
 }
