@@ -36,6 +36,7 @@ const LoginPage = (props) => {
       console.log(res)
       navigate('/')
       // 메세지에 따라서 행동을 할수잇따
+      navigate('/')
     })
 
     // props.setAuthenticate(true)
