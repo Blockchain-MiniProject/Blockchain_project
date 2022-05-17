@@ -32,6 +32,7 @@ const initConnection = (ws) => {
 
             write(ws, queryAllMessage());
             } else {
+            initMessageHandler(ws);
             console.log("이미 연결된 아이피")
         }
     } else if(sockets.length === 0) {
