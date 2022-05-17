@@ -22,13 +22,13 @@ export const createUser = async (req,res) => {
     const privatekey = createPrivateKey();
     const publickey = createPublickey(privatekey);
     console.log(publickey);
-    res.send({privatekey,publickey})
-    // try {
-    //     const sql = `INSERT INTO userinfo('email','password','address','balance') VALUES("id","pwd","address",0);`
-    //     const [result] = await pool.query(sql); //await 안하면 pending
-    //     console.log(result);
-    // }
-    // catch (e) {
-    //     throw e;
-    // }
+    try {
+        const sql = "INSERT INTO userinfo(email,password,privatekey,address,balance) VALUES(?,?,?,?,0);"
+        const [result] = await pool.query(sql,[email,password,privatekey,publickey]); //await 안하면 pending
+        console.log(result);    
+    }
+    catch (e) {
+        throw e;
+    }
+    res.send("회원가입 완료")
 }
