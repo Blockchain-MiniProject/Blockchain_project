@@ -22,9 +22,11 @@ const MainPage = ({authenticate}) => {
   }
 
   const handleClick = async () => {
+    const id = localStorage.getItem("id")
+    const address = localStorage.getItem("address")
     try {
       getBlockData()
-      const result = await axios.post('http://localhost:3500/mineBlock', /* data : */ null)
+      const result = await axios.post('http://localhost:3500/mineBlock', /* data : */ {id,address} )
       console.log(result.data)
       setAllData([result.data,...allData])
     }catch(e){         //에러감지

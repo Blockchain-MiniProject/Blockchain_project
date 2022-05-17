@@ -53,7 +53,7 @@ export const loginClick = async (req,res) => {
           res.send('error')
         }
         else{
-          res.send(result[0].address)
+          res.send(result[0])
         }
     }
     catch (e) {
