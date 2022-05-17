@@ -23,6 +23,7 @@ INSERT INTO userinfo(email,password,privatekey,address,balance) VALUES("sdf@nadf
 SELECT * FROM userinfo;
 
 DROP table userinfo;
+DROP table blocks;
 
 UPDATE
 DELETE

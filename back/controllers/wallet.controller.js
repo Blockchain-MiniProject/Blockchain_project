@@ -53,10 +53,22 @@ export const loginClick = async (req,res) => {
           res.send('error')
         }
         else{
-            res.send('success')
-            // sessionStorage.setItem(user, "email")
-            // console.log(user)
+          res.send(result[0].address)
         }
+    }
+    catch (e) {
+        throw e;
+    }
+  }
+
+  export const myInfo = async (req,res) => {
+    const {address} = req.query
+
+    console.log("address : ",address)
+    try {
+        const sql = `select * from userinfo where address = "${address}";`
+        const [[result]] = await pool.query(sql); 
+        res.send(result)
     }
     catch (e) {
         throw e;

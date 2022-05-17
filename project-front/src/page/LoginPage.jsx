@@ -35,14 +35,11 @@ const LoginPage = (props) => {
     })
     // res 저장
     .then((res)=> {
-      console.log(res)
       navigate('/')
-      
-      localStorage.setItem('user', 'email');
-
-
+      localStorage.setItem("address",res.data)
+      // 메세지에 따라서 행동을 할수잇따
     })
-
+    
     // props.setAuthenticate(true)
     // navigate('/')
   }

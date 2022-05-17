@@ -20,20 +20,22 @@ export const getBlock = async (req,res) => {
 export const mineBlock = async (req,res) => {
     const address = req.body.address;
     // const result = await axios.post("http://localhost:3010/mineBlock",{data:address})
-    const result = await axios.post("http://localhost:3010/mineBlock",{data:"sieun"})
+    const mineResult = await axios.post("http://localhost:3010/mineBlock",{data:"sieun"})
     // block db에 { {...block}, miner:address로 저장}
-    
+    const {index, data, timestamp, hash, previousHash, difficulty, nonce} = mineResult.data;
+    const vars = [index, data, timestamp, hash, previousHash, difficulty, nonce]
+    console.log(vars)
 
-    // try {
-    //     const sql = "INSERT INTO blocks(miner) VALUES(?,?,?,?,0);"
-    //     const [result] = await pool.query(sql,[email,password,privatekey,publickey]);
-    //     console.log(result);
-    // }
-    // catch (e) {
-    //     throw e;
-    // }
+    try {
+        const sql = "INSERT INTO blocks(`index`, data, timestamp, hash, previousHash, difficulty, nonce, miner) VALUES(?,?,?,?,?,?,?,'asdsad');"
+        const [result] = await pool.query(sql,vars);
+        console.log(result);
+    }
+    catch (e) {
+        throw e;
+    }
 
 
     // userinfo에서 address 일치하는 곳에 balance 50 추가
-    res.send(result.data)
+    res.send(mineResult.data)
 }

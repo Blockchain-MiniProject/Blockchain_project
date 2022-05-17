@@ -1,38 +1,47 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import { Container, Form, Button } from 'react-bootstrap'
 import NavBar from '../components/NavBar'
+import axios from "axios"
 
 const Mypage = () => {
+  const address = localStorage.getItem("address")
 
+  const [myInfo,setMyInfo] = useState({});
 
-  const callData = (e) => {
-    e.preventDefault();
-    const {email} = e.target
-    console.log(email)
+  const callApi = async () => {
+    const result = await axios.get("http://localhost:3500/myInfo",{
+      params: {
+        address: address
+      }
+    })
+    setMyInfo(result.data)
   }
 
-  const user = localStorage.getItem('user');
-
+  useEffect(()=>{
+    callApi();
+  }
+  ,[])
+  
+  console.log(myInfo)
 
   return (
     <Container>
-      <Form className='mypage-form' onSubmit={(e)=>(callData(e))}>
+      <Form className='mypage-form'>
         <h2>마이페이지</h2>
         <fieldset disabled>
-          <div> {user.value} </div>
           <Form.Group className="mb-3" >
             <Form.Label htmlFor="disabledTextInput">지갑 주소</Form.Label>
-            <Form.Control id="disabledTextInput" placeholder="지갑주소 생성 수정불가" />
+            <Form.Control id="disabledTextInput" placeholder={myInfo.address} />
           </Form.Group>
 
           <Form.Group className="mb-3">
             <Form.Label htmlFor="disabledTextInput">잔액</Form.Label>
-            <Form.Control id="disabledTextInput" placeholder="잔액 수정불가" />
+            <Form.Control id="disabledTextInput" placeholder={myInfo.balance} />
           </Form.Group>
 
           <Form.Group className="mb-3">
-            <Form.Label htmlFor="disabledTextInput" onSubmit={callData}>이메일</Form.Label>
-            <Form.Control id="disabledTextInput" name="email" placeholder="이메일 가져오기 수정불가" />
+            <Form.Label htmlFor="disabledTextInput">이메일</Form.Label>
+            <Form.Control id="disabledTextInput" placeholder={myInfo.email} />
           </Form.Group>
         </fieldset>
           <Form.Group className="mb-3">
