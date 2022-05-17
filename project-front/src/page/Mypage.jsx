@@ -1,8 +1,28 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import { Container, Form, Button } from 'react-bootstrap'
 import NavBar from '../components/NavBar'
+import axios from "axios"
 
 const Mypage = () => {
+  const address = localStorage.getItem("address")
+
+  const [myInfo,setMyInfo] = useState({});
+
+  const callApi = async () => {
+    const result = await axios.get("http://localhost:3500/myInfo",{
+      params: {
+        address: address
+      }
+    })
+    setMyInfo(result)
+  }
+
+  useEffect(
+    callApi
+  ,[])
+  
+  console.log(myInfo)
+
   return (
     <Container>
       <Form className='mypage-form'>

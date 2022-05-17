@@ -14,5 +14,7 @@ router.post("/mineBlock", MainController.mineBlock)
 
 router.post("/createUser",WalletController.createUser)
 router.get("/loginGet", WalletController.loginClick)
+router.get("/myInfo", WalletController.myInfo)
+
 
 export default router;

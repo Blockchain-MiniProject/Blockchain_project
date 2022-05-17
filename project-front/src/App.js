@@ -21,7 +21,7 @@ function App() {
         <Route path="/block/:id" element={<BlockPage/>}/>
         <Route path="/login" element={<LoginPage setAuthenticate={setAuthenticate}/>}/>
         <Route path="/signup" element={<SignupPage/>}/>
-        <Route path="/mypage/:id" element={<PrivateRoute authenticate={authenticate}/>}/>
+        <Route path="/mypage/" element={<PrivateRoute authenticate={authenticate}/>}/>
         <Route path="/*" element={<MainPage/>} />
       </Routes>
     </div>

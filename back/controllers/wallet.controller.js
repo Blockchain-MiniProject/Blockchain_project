@@ -61,3 +61,17 @@ export const loginClick = async (req,res) => {
     }
   }
 
+  export const myInfo = async (req,res) => {
+    const {address} = req.query
+
+    console.log("address : ",address)
+    try {
+        const sql = `select * from userinfo where address = ${address};`
+        const [[result]] = await pool.query(sql); 
+        res.send(result)
+    }
+    catch (e) {
+        throw e;
+    }
+  }
+
