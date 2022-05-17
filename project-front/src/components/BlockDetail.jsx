@@ -16,11 +16,7 @@ const BlockDetail = () => {
     let url = `http://localhost:3500/blocks`;
     let response = await fetch(url);
     let data = await response.json();
-    console.log("data: ",data);
-
-    // const time = Number(data.timestamp)*1000;
-    // const date = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(time);
-    // console.log(date);
+    console.log("data: ",data);  
 
     const searchHash = data.find((b) =>  b.hash === id);
     if(Number(id) === 0 || Number(id)) {
@@ -29,7 +25,6 @@ const BlockDetail = () => {
       setBlock(searchHash);
       navigate(`/block/${searchHash.index}`);
     }     
-    // console.log("block: ", block)
   }
 
   useEffect(() => {
@@ -41,6 +36,14 @@ const BlockDetail = () => {
     if (index !== -1 ) {
       navigate(`/block/${index}`)
     }
+  }
+
+  const changeDate = (timestamp) => {
+    const time = Number(block.timestamp) * 1000;
+    const date = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(time);
+    console.log("바뀐 시간은 ", date)
+
+    return date
   }
 
   const CopyHash = () => {
@@ -69,8 +72,8 @@ const BlockDetail = () => {
               <td>{block?.data}</td>
             </tr>
             <tr>
-              <td>Timestamp</td>
-              <td>{block?.timestamp}</td>
+              <td>Timestamp</td>         
+              <td>{changeDate()} ({block?.timestamp})</td>              
             </tr>
             <tr>
               <td>Hash</td>
