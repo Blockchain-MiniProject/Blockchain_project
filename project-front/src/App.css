@@ -32,6 +32,10 @@
   border: 1px solid black;
 }
 
+.block-hash {
+  text-overflow: clip;
+}
+
 /* MiningButton - component */
 
 .mining-button {

@@ -1,8 +1,6 @@
-import React, { useEffect ,useState ,setTimeout } from 'react'
-import { useParams, useNavigate } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCopy } from '@fortawesome/free-regular-svg-icons'
-import { Container , Row, Col , Table}from 'react-bootstrap';
+import React from 'react'
+import { useNavigate } from 'react-router-dom';
+import { Container, Table}from 'react-bootstrap';
 
 
 const BlockAll = ({allData}) => { 
@@ -47,23 +45,23 @@ const BlockAll = ({allData}) => {
 
   return (
     <Container className='block-data'>
-      <Table striped bordered hover>
+      <Table striped bordered hover responsive>
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">시은거래소</th>
-            <th scope="col">timestamp</th>
-            <th scope="col" >Hash</th>
+            <th scope="col">Data</th>
+            <th scope="col">Timestamp</th>
+            <th scope="col">Hash</th>
           </tr>
         </thead>
-      <tbody>
+        <tbody>
           {allData.map((data,index) => {
             return     <tr key={index}>
                           <th scope="row">{data.index}</th>
                           <td>{data.data}</td>
                           <td>{data.timestamp}</td>
                           {/* 실행구문이 있어서 */}
-                          <td onClick={()=>{searchHash(data.index)}}><b>{data.hash}</b></td>
+                          <td className='block-hash' onClick={()=>{searchHash(data.index)}}><b>{data.hash}</b></td>
                         </tr>            
           })}
         </tbody>
