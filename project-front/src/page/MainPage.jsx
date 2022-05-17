@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState , useEffect } from 'react'
 import MiningButton from '../components/MiningButton'
 import PostExample from '../components/PostExample'
 import BlockDetail from '../components/BlockDetail'
 import BlocksAll from '../components/BlocksAll'
 import SearchBar from '../components/SearchBar'
+import axios from 'axios'
 
 // 1. authenticate 를 이용해서 해결해보기 사이트 이동 해보기
 // 2. 

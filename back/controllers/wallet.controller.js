@@ -48,13 +48,12 @@ export const loginClick = async (req,res) => {
         const sql = "select * from userinfo where email = ? and password = ?;"
         const [result] = await pool.query(sql,[email,password]); 
         if(result.length===0){
-          console.log("이메일 비밀번호 불일치")
+        //   console.log("이메일 비밀번호 불일치")
           // 메세지를보
-          res.send('success')
+          res.send('er')
         }
         else{
-          console.log("로그인 완료")
-          res.send('error')
+          res.send('success')
         }
     }
     catch (e) {
