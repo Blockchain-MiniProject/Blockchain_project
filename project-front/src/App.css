@@ -27,10 +27,14 @@
 }
 
 /* BlockALl - component */
-.block-data {
-  padding: 15px;
-  border: 1px solid black;
-}
+
+@media ( max-width: 768px ) {
+    #block-data {
+        padding: 15px;
+        border: 1px solid black;
+      }
+  }
+
 
 .block-hash {
   text-overflow: clip;
