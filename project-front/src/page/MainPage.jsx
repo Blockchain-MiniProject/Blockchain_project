@@ -5,21 +5,11 @@ import BlockDetail from '../components/BlockDetail'
 import BlocksAll from '../components/BlocksAll'
 import SearchBar from '../components/SearchBar'
 import axios from 'axios'
-// import styled from "styled-components";
 
 // 1. authenticate 를 이용해서 해결해보기 사이트 이동 해보기
 // 2. 
 
 const MainPage = ({authenticate}) => {
-
-
-//   const SubTitleDiv = styled.div`
-//   font-size: ${(props) => props.fontSize};
-//   font-weight: 600;
-// `
-
-
-
 
 
   const [allData,setAllData] = useState([]);

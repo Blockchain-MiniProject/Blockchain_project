@@ -11,6 +11,8 @@ const LoginPage = (props) => {
   //   navigate('/')
   // }
 
+  const mtStorage = window.localStorage;
+
 
   const loginAfter = (e) => {
     e.preventDefault();
@@ -35,8 +37,10 @@ const LoginPage = (props) => {
     .then((res)=> {
       console.log(res)
       navigate('/')
-      // 메세지에 따라서 행동을 할수잇따
-      navigate('/')
+      
+      localStorage.setItem('user', 'email');
+
+
     })
 
     // props.setAuthenticate(true)
