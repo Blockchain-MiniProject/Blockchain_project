@@ -13,10 +13,6 @@ const BlockAll = ({allData}) => {
     navigate(`/block/${index}`)
   }
 
-  // 참조롤 
-  // useEffect(() => {
-  //   getBlockData()
-  // },[])
 
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
