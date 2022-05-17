@@ -30,7 +30,6 @@ const NavBar = ({auth, setAuth}) => {
               src="https://cdn-icons-png.flaticon.com/512/2170/2170153.png"
               alt='로그인'
             />
-            {/* <FontAwesomeIcon icon={faUser} /> */}
             <h6>로그인</h6>
         </div>
         :

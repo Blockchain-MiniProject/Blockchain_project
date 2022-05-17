@@ -1,6 +1,5 @@
 import React from 'react'
-import { Button, Container } from 'react-bootstrap';
-import axios from 'axios';
+import { Button } from 'react-bootstrap';
 
 const MiningButton = ({ onClick }) => {
   return (

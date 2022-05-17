@@ -13,6 +13,7 @@ const SignupPage = () => {
     await axios.post('http://localhost:3500/createUser', {email, password});
     navigate('/login');
   }
+  
   return (
     <Container >
       <Form className='signup-form' onSubmit={addSignUp}>

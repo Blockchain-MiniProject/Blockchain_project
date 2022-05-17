@@ -7,12 +7,7 @@ const LoginPage = (props) => {
   const {user} = props;
   const navigate = useNavigate()
 
-  // const goToSignup = () => {
-  //   navigate('/')
-  // }
-
   const mtStorage = window.localStorage;
-
 
   const loginAfter = (e) => {
     e.preventDefault();
