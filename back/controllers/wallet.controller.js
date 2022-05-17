@@ -23,32 +23,35 @@ export const createUser = async (req,res) => {
     const publickey = createPublickey(privatekey);
     console.log(publickey);
     try {
-        const sql = "INSERT INTO userinfo(email,password,privatekey,address,balance) VALUES(?,?,?,?,0);"
+        const sql = `INSERT INTO userinfo(email,password,privatekey,address,balance) SELECT ?,?,?,?,0 FROM DUAL WHERE NOT EXISTS (SELECT * FROM userinfo WHERE email = '${email}') ;`
         const [result] = await pool.query(sql,[email,password,privatekey,publickey]);
+        console.log(result.affectedRows) //쿼리가 영향 준 row 수
+        if(result.affectedRows){
+            console.log("db에 존재하지 않는 email, 가입 완료")
+            res.send(true)
+        }
+        else{
+            console.log("db에 이미 존재하는 email")
+            res.send(false)
+        }
     }
     catch (e) {
         throw e;
     }
-    res.send("회원가입 완료")
 
     
 }
 
-// 형식이 백에서 쓰는 코드다
-// 
 export const loginClick = async (req,res) => {
     // 변수 이메일
     // console.log(req.query)
     const {email,password} = req.query
 
     console.log("email : ",email,"password: ",password)
-    // console.log("email : ",email,"password: ",pwd)
     try {
         const sql = "select * from userinfo where email = ? and password = ?;"
         const [result] = await pool.query(sql,[email,password]); 
         if(result.length===0){
-        //   console.log("이메일 비밀번호 불일치")
-          // 메세지를보
           res.send('error')
         }
         else{

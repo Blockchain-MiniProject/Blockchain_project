@@ -30,10 +30,15 @@ const LoginPage = (props) => {
     })
     // res 저장
     .then((res)=> {
-      navigate('/')
-      const {address, email} = res.data
-      localStorage.setItem("address",address)
-      localStorage.setItem("id",email.split("@")[0])
+      if(res.data=="error"){
+        alert("이메일과 비밀번호를 확인해주세요")
+      }
+      else{
+        navigate('/')
+        const {address, email} = res.data
+        localStorage.setItem("address",address)
+        localStorage.setItem("id",email.split("@")[0])
+      }
       // 메세지에 따라서 행동을 할수잇따
     })
     

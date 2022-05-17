@@ -10,8 +10,13 @@ const SignupPage = () => {
   const addSignUp= async(event)=>{
     event.preventDefault();
     console.log("email은 : ", email, "password는 : ", password);
-    await axios.post('http://localhost:3500/createUser', {email, password});
-    navigate('/login');
+    const {data} = await axios.post('http://localhost:3500/createUser', {email, password});
+    if(data){
+      alert("회원가입 완료")
+      navigate('/login');
+    }
+    else alert("이미 가입된 email입니다")
+    
   }
   
   return (
