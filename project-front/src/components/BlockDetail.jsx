@@ -19,6 +19,11 @@ const BlockDetail = () => {
     let data = await response.json();
     console.log("data: ",data);
 
+    const time = Number(data.timestamp)*1000;
+    const date = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(time);
+    console.log(date);
+    
+
     //
     const searchHash = data.find((b) =>  b.hash === id);
     if(Number(id) === 0 || Number(id)) {
