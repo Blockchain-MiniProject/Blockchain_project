@@ -21,14 +21,16 @@ const LoginPage = (props) => {
     console.log(password.value)
     // 이런식으로 봅아와서 서버에 넘긴다.
 
+    // 서버를 넘긴다
     axios.get(`http://localhost:3500/loginGet`,{
       // 서버로 데이터를 넘긴다.
       params: {
         email: email.value,
         password: password.value,
       }
+      // 두번째는 data 값을 넘긴다.
     })
-    // res 저장
+    // res(응답) 매소드 값 이용
     .then((res)=> {
       if(res.data=="error"){
         alert("이메일과 비밀번호를 확인해주세요")
@@ -41,9 +43,6 @@ const LoginPage = (props) => {
       }
       // 메세지에 따라서 행동을 할수잇따
     })
-    
-    // props.setAuthenticate(true)
-    // navigate('/')
   }
 
   const clickHandler = () => {
