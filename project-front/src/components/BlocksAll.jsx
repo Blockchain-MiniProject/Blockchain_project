@@ -60,7 +60,7 @@ const BlockAll = () => {
   // 참조롤 
   useEffect(() => {
     getBlockData()
-  },[allData])
+  },[])
 
   return (
       <div>
