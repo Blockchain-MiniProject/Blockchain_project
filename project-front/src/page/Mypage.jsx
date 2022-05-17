@@ -45,8 +45,8 @@ const Mypage = () => {
           </Form.Group>
         </fieldset>
           <Form.Group className="mb-3">
-            <Form.Label htmlFor="disabledTextInput">Disabled input</Form.Label>
-            <Form.Control type="password" id="disabledTextInput" placeholder="비밀번호" value={myInfo.password} />
+            <Form.Label htmlFor="disabledTextInput">비밀번호</Form.Label>
+            <Form.Control type="password" id="disabledTextInput" placeholder="비밀번호" />
           </Form.Group>
           <Button variant="outline-primary" type="submit">수정</Button>
       </Form>

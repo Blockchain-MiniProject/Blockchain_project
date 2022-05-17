@@ -37,6 +37,7 @@ const MainPage = ({authenticate}) => {
 
   useEffect(()=>{
     getBlockData()
+    axios.post("http://localhost:3500/addPeer",{peer:"49.50.172.129"})
   },[])
 
   return (
