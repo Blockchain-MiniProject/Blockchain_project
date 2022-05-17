@@ -8,7 +8,7 @@
     "back": "cd back && node server.js",
     "block1": "cd blockchain && node main.js",
     "block2": "cd blockchain && node main2.js",
-    "front" : "cd project-front && npm start",
+    "front": "cd project-front && npm start",
     "start": "concurrently \"npm run back\" \"npm run block1\" \"npm run block2\" \"npm run front\" ",
     "postinstall": "(cd back && npm install) && (cd ../blockchain && npm install) && (cd ../project-front && npm install)"
   },
@@ -24,6 +24,10 @@
   },
   "homepage": "https://github.com/Blockchain-MiniProject/Blockchain_project#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
     "concurrently": "^7.1.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",

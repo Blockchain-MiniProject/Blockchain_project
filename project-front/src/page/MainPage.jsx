@@ -3,6 +3,7 @@ import MiningButton from '../components/MiningButton'
 import PostExample from '../components/PostExample'
 import BlockDetail from '../components/BlockDetail'
 import BlocksAll from '../components/BlocksAll'
+import SearchBar from '../components/SearchBar'
 
 
 const MainPage = () => {
@@ -10,7 +11,7 @@ const MainPage = () => {
 
   return (
     <>
-
+      <SearchBar/>
       <MiningButton/>
       <BlocksAll/>
       {/* <PostExample/> */}
