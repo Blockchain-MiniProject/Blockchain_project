@@ -3,29 +3,29 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Container , Row, Col , Table}from 'react-bootstrap';
 
 
-const BlockAll = () => { 
+const BlockAll = ({allData}) => { 
 
   // let {hash} = useParams();
   const navigate = useNavigate();
 
   // 초기값 배열값으로 줘야 map 함수 , 배열로 하면 안된다.
-  const [allData,setAllData] = useState([]);
+  // const [allData,setAllData] = useState([]);
 
-  const getBlockData = async (data1) => {
-    let url = `http://localhost:3010/blocks`;
-    let response = await fetch(url)
-    let data = await response.json();
-    console.log("data123123"  , data);
-    console.log("block 123123" , allData );
-    setAllData(data)
+  // const getBlockData = async (data1) => {
+  //   let url = `http://localhost:3500/blocks`;
+  //   let response = await fetch(url)
+  //   let data = await response.json();
+  //   console.log("data123123"  , data);
+  //   console.log("block 123123" , allData );
+  //   setAllData(data)
 
-    console.log("data: ",data[5]);
+  //   console.log("data: ",data[5]);
 
-    const click = () => {
-      navigate(`/block/${data[5]}`)
-    }
+  //   const click = () => {
+  //     navigate(`/block/${data[5]}`)
+  //   }
 
-  }
+  // }
 
 
   const searchHash = (index) => {
@@ -39,9 +39,9 @@ const BlockAll = () => {
   }
 
   // 참조롤 
-  useEffect(() => {
-    getBlockData()
-  },[])
+  // useEffect(() => {
+  //   getBlockData()
+  // },[])
 
   return (
       <div>

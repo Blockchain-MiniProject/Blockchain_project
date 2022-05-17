@@ -12,7 +12,7 @@ const BlockDetail = () => {
 
   const [block, setBlock] = useState("");
   const getBlockDetail = async() => {
-    let url = `http://localhost:3010/blocks`;
+    let url = `http://localhost:3500/blocks`;
     let response = await fetch(url);
     let data = await response.json();
     console.log("data: ",data);
