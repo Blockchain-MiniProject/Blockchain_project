@@ -45,7 +45,7 @@ const BlockAll = ({allData}) => {
 
   return (
     <Container className='block-data'>
-      <Table striped bordered hover responsive>
+      <Table striped bordered hover responsive="lg">
         <thead>
           <tr>
             <th scope="col">#</th>

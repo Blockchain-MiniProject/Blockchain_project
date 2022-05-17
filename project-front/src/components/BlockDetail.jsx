@@ -53,7 +53,7 @@ const BlockDetail = () => {
     <>
     {block?
       <Container className='block-detail'>
-        <Table striped bordered hover >
+        <Table striped bordered hover responsive="lg">
           <thead>
             <tr>
               <th></th>
