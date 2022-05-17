@@ -52,8 +52,8 @@ const BlockDetail = () => {
   return (
     <>
     {block?
-      <Container>
-        <Table striped bordered hover>
+      <Container className='block-detail'>
+        <Table striped bordered hover >
           <thead>
             <tr>
               <th></th>
@@ -75,7 +75,7 @@ const BlockDetail = () => {
             </tr>
             <tr>
               <td>Hash</td>
-              <td>{block?.hash} &nbsp; <FontAwesomeIcon icon={faCopy} onClick={CopyHash}/></td>
+              <td><b>{block?.hash}</b> &nbsp; <FontAwesomeIcon icon={faCopy} onClick={CopyHash}/></td>
             </tr>
             <tr>
               <td>Previous Hash</td>
