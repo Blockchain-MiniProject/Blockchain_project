@@ -31,17 +31,17 @@ const Mypage = () => {
         <fieldset disabled>
           <Form.Group className="mb-3" >
             <Form.Label htmlFor="disabledTextInput">지갑 주소</Form.Label>
-            <Form.Control id="disabledTextInput" placeholder={myInfo.address} />
+            <Form.Control id="disabledTextInput" value={myInfo.address} />
           </Form.Group>
 
           <Form.Group className="mb-3">
             <Form.Label htmlFor="disabledTextInput">잔액</Form.Label>
-            <Form.Control id="disabledTextInput" placeholder={myInfo.balance} />
+            <Form.Control id="disabledTextInput" value={myInfo.balance} />
           </Form.Group>
 
           <Form.Group className="mb-3">
             <Form.Label htmlFor="disabledTextInput">이메일</Form.Label>
-            <Form.Control id="disabledTextInput" placeholder={myInfo.email} />
+            <Form.Control id="disabledTextInput" value={myInfo.email} />
           </Form.Group>
         </fieldset>
           <Form.Group className="mb-3">
