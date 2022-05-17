@@ -11,6 +11,7 @@ import axios from 'axios'
 
 const MainPage = ({authenticate}) => {
 
+
   const [allData,setAllData] = useState([]);
 
   const getBlockData = async () => {
@@ -50,4 +51,3 @@ const MainPage = ({authenticate}) => {
 }
 
 export default MainPage
-
