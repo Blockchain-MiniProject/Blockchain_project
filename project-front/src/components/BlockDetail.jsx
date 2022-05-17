@@ -31,6 +31,14 @@ const BlockDetail = () => {
   useEffect(() => {
     getBlockDetail()
   }, [id])
+
+  const clickH = (index) => {
+    // previous hash
+    if (index !== -1 ) {
+      navigate(`/block/${index}`)
+    }
+  }
+
   
   return (
     <>
@@ -63,7 +71,7 @@ const BlockDetail = () => {
             </tr>
             <tr>
               <td>Previous Hash</td>
-              <td>{block?.previousHash}</td>
+              <td onClick={() =>clickH(block.index-1)}>{block?.previousHash}</td>
             </tr>
             <tr>
               <td>Difficulty</td>

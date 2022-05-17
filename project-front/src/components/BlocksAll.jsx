@@ -8,7 +8,14 @@ import { Container , Row, Col , Table}from 'react-bootstrap';
 // 1. 눌러서 사이트 이동 - done
 
 // 2. 누른 값을 어떻게 받을지?
-// 2_1. 변수
+// 2_1. 변수 
+
+// 1.nava
+// 2. key 찾아가서
+// 3. oncllik naviaaget 쓴다.
+
+// const
+
 
 
 
@@ -53,7 +60,7 @@ const BlockAll = () => {
   // 참조롤 
   useEffect(() => {
     getBlockData()
-  },[])
+  },[allData])
 
   return (
       <div>
@@ -68,11 +75,12 @@ const BlockAll = () => {
                 </tr>
               </thead>
             <tbody>
-                {allData.map((data,index) => {
+                {allData.reverse().map((data,index) => {
                   return     <tr key={index}>
                                 <th scope="row">{data.index}</th>
                                 <td>{data.data}</td>
                                 <td>{data.timestamp}</td>
+                                {/* 실행구문이 있어서 */}
                                 <td onClick={()=>{searchHash(data.index)}}>{data.hash} </td>
                               </tr>            
                 })}
