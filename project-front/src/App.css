@@ -27,14 +27,14 @@
 }
 
 /* BlockALl - component */
+.block-data {
+  padding: 15px;
+  border: 1px solid black;
+}
 
-@media ( max-width: 768px ) {
-    #block-data {
-        padding: 15px;
-        border: 1px solid black;
-      }
-  }
-
+.block-hash {
+  word-break: break-all;
+}
 
 /* MiningButton - component */
 
@@ -102,6 +102,7 @@
   margin: 10vh 0 5vh 0;
   padding: 15px;
   border: 1px solid black;
+  word-break: break-all;
 }
 /* SignupPage - page */
 .signup-form {
