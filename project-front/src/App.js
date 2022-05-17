@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';          //bootstrap 가져온것
 import { Routes, Route } from "react-router-dom";
 import MainPage from './page/MainPage';
 import BlockPage from './page/BlockPage';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import LoginPage from './page/LoginPage';
 import SignupPage from './page/SignupPage';
 import PrivateRoute from './route/PrivateRoute';
@@ -24,7 +24,6 @@ function App() {
         <Route path="/signup" element={<SignupPage/>}/>
         <Route path="/mypage/:id" element={<PrivateRoute authenticate={authenticate}/>}/>
         <Route path="/*" element={<MainPage/>} />
-
       </Routes>
     </div>
   );
