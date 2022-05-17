@@ -13,7 +13,6 @@ const MainPage = ({authenticate}) => {
 
   const [allData,setAllData] = useState([]);
 
-
   const getBlockData = async () => {
     const url = `http://localhost:3500/blocks`;
     const response = await fetch(url)
@@ -31,7 +30,6 @@ const MainPage = ({authenticate}) => {
       // 비어있을시
       alert('error')
     }
-
   }
 
   useEffect(()=>{
@@ -41,12 +39,13 @@ const MainPage = ({authenticate}) => {
   return (
     <>
       <SearchBar/>
-      {
+      <MiningButton onClick={handleClick} />
+      {/* {
         authenticate
         ? <MiningButton />
         : <div> 로그인시 마이닝 버튼 생성 </div>
-      }
-      {/* <BlocksAll/> */}
+      } */}
+      <BlocksAll allData={allData} />
     </>
   )
 }

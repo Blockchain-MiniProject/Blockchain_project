@@ -44,32 +44,29 @@ const BlockAll = ({allData}) => {
   // },[])
 
   return (
-      <div>
-          <Container>
-            <Table striped bordered hover>
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">시은거래소</th>
-                  <th scope="col">timestamp</th>
-                  <th scope="col" >Hash</th>
-                </tr>
-              </thead>
-            <tbody>
-                {allData.map((data,index) => {
-                  return     <tr key={index}>
-                                <th scope="row">{data.index}</th>
-                                <td>{data.data}</td>
-                                <td>{data.timestamp}</td>
-                                {/* 실행구문이 있어서 */}
-                                <td onClick={()=>{searchHash(data.index)}}>{data.hash} </td>
-                              </tr>            
-                })}
-             </tbody>
-            </Table>
-        </Container>
-
-    </div>
+    <Container className='block-data'>
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">시은거래소</th>
+            <th scope="col">timestamp</th>
+            <th scope="col" >Hash</th>
+          </tr>
+        </thead>
+      <tbody>
+          {allData.reverse().map((data,index) => {
+            return     <tr key={index}>
+                          <th scope="row">{data.index}</th>
+                          <td>{data.data}</td>
+                          <td>{data.timestamp}</td>
+                          {/* 실행구문이 있어서 */}
+                          <td onClick={()=>{searchHash(data.index)}}>{data.hash} </td>
+                        </tr>            
+          })}
+        </tbody>
+      </Table>
+  </Container>
   )
 }
 

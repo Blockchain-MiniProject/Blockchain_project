@@ -10,12 +10,12 @@ import PrivateRoute from './route/PrivateRoute';
 import NavBar from './components/NavBar';
 
 function App() {
-  const [authenticate, setAuthenticate] = useState(true) //true면 로그인, false면 로그인 안됨
+  const [authenticate, setAuthenticate] = useState(false) //true면 로그인, false면 로그인 안됨
 
   useEffect(()=>{console.log("authenticate : ", authenticate)},[authenticate])
   return (
     <div className='body'>
-      <NavBar/>
+      <NavBar auth={authenticate} setAuth={setAuthenticate}/>
       <Routes>
         <Route path="/" element={<MainPage authenticate={authenticate} />}/>
         <Route path="/block/:id" element={<BlockPage/>}/>
