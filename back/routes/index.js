@@ -13,5 +13,6 @@ router.post("/addPeer", MainController.addPeer)
 router.post("/mineBlock", MainController.mineBlock)
 
 router.post("/createUser",WalletController.createUser)
+router.get("/loginGet", WalletController.loginClick)
 
 export default router;
