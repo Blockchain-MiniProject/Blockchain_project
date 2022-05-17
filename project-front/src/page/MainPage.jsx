@@ -45,7 +45,7 @@ const MainPage = ({authenticate}) => {
         ? <MiningButton />
         : <div> 로그인시 마이닝 버튼 생성 </div>
       }
-      <BlocksAll/>
+      {/* <BlocksAll/> */}
     </>
   )
 }

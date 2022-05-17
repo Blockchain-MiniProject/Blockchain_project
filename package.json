@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "back": "cd back && node server.js",
+    "back": "cd back && nodemon server.js",
     "block1": "cd blockchain && node main.js",
     "block2": "cd blockchain && node main2.js",
     "front": "cd project-front && npm start",
@@ -29,6 +29,8 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
     "concurrently": "^7.1.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.16",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-is": "^16.13.1",
