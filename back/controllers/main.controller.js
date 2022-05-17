@@ -23,12 +23,10 @@ export const mineBlock = async (req,res) => {
     // block db에 { {...block}, miner:address로 저장}
     const {index, data, timestamp, hash, previousHash, difficulty, nonce} = mineResult.data;
     const vars = [index, data, timestamp, hash, previousHash, difficulty, nonce, address]
-    console.log(vars)
 
     try {
         const sql = "INSERT INTO blocks(`index`, data, timestamp, hash, previousHash, difficulty, nonce, miner) VALUES(?,?,?,?,?,?,?,?);"
         const [result] = await pool.query(sql,vars);
-        console.log(result);
     }
     catch (e) {
         throw e;

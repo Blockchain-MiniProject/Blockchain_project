@@ -25,7 +25,6 @@ export const createUser = async (req,res) => {
     try {
         const sql = "INSERT INTO userinfo(email,password,privatekey,address,balance) VALUES(?,?,?,?,0);"
         const [result] = await pool.query(sql,[email,password,privatekey,publickey]);
-        console.log(result);
     }
     catch (e) {
         throw e;
