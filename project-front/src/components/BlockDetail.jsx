@@ -4,10 +4,15 @@ import { Container, Table, Tooltip, OverlayTrigger } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopy } from '@fortawesome/free-regular-svg-icons'
 import { useNavigate, useParams } from 'react-router-dom'
+import { SpinnerCircular } from 'spinners-react';
+
+
 
 const BlockDetail = () => {
   let {id} = useParams();
   console.log("id: ", id, typeof id);
+
+  const [loading,setLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -102,6 +107,9 @@ const BlockDetail = () => {
               </OverlayTrigger>
               </td>
             </tr>
+            {
+              
+            }
             <tr>
               <td>Previous Hash</td>
               <OverlayTrigger
