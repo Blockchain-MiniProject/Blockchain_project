@@ -1,5 +1,6 @@
 .body {
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   background-color: rgb(241, 241, 241, 0.8);
 }
 
